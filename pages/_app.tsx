@@ -1,7 +1,9 @@
 import "../styles/globals.css";
 
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { Box, ChakraProvider, Container, extendTheme } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
+
+import Navbar from "../components/Navbar";
 
 const colors = {
   brand: {
@@ -16,7 +18,12 @@ const theme = extendTheme({ colors });
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Box bgColor={"rgb(32,32,35)"} minH="100vh">
+        <Container maxW="container.xl">
+          <Navbar />
+          <Component {...pageProps} />
+        </Container>
+      </Box>
     </ChakraProvider>
   );
 }
