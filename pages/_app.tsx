@@ -1,29 +1,36 @@
-import "../styles/globals.css";
-
-import { Box, ChakraProvider, Container, extendTheme } from "@chakra-ui/react";
+import {
+  Box,
+  ChakraProvider,
+  Container,
+  extendTheme,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import type { AppProps } from "next/app";
+import React, { FC } from "react";
 
+import theme from "./../styles/theme";
 import Navbar from "../components/Navbar";
 
-const colors = {
-  brand: {
-    900: "#1a365d",
-    800: "#153e75",
-    700: "#2a69ac",
-  },
-};
+const Layout: FC = ({ children }) => {
+  const bgColor = useColorModeValue("yellow.100", "rgb(32,32,35)");
+  const color = useColorModeValue("black", "white");
 
-const theme = extendTheme({ colors });
+  return (
+    <Box bgColor={bgColor} color={color} minH="100vh">
+      {children}
+    </Box>
+  );
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Box bgColor={"rgb(32,32,35)"} minH="100vh">
-        <Container maxW="container.xl">
-          <Navbar />
+      <Layout>
+        <Navbar />
+        <Container maxW="container.md" pt={40}>
           <Component {...pageProps} />
         </Container>
-      </Box>
+      </Layout>
     </ChakraProvider>
   );
 }
