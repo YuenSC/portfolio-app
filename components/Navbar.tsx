@@ -52,6 +52,7 @@ const Navbar = () => {
       top={0}
       left={"50%"}
       transform="translateX(-50%)"
+      zIndex={"overlay"}
     >
       <HStack
         py={4}

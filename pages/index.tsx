@@ -1,86 +1,136 @@
-import { Box, Container } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Grid,
+  HStack,
+  Heading,
+  Stack,
+  Text,
+  VStack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import type { NextPage } from "next";
+import Image from "next/image";
+import { FC } from "react";
 
 const Home: NextPage = () => {
+  const welcomeLineBgColor = useColorModeValue(
+    "blackAlpha.200",
+    "whiteAlpha.200"
+  );
+
   return (
-    <Box>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-      pariatur voluptatem rerum minima incidunt dolores aliquid accusantium
-      libero quasi, nulla nemo a voluptates vitae totam dolorem explicabo nobis
-      dolore nostrum, tempora, nam consequuntur. Iure ipsa quaerat dolore,
-      asperiores iusto error atque ab doloribus eius animi? Repudiandae ad
-      consequatur similique quas dignissimos commodi tenetur voluptates ipsum
-      rem officia ipsa aspernatur neque aut minus, sed hic? Sint blanditiis
-      aperiam culpa dolorem accusamus nam, perferendis ullam maxime accusantium
-      quidem maiores natus, modi a quod temporibus, praesentium sed alias optio.
-      Praesentium ducimus quae ad quos veritatis ipsum commodi suscipit sequi
-      iste possimus perspiciatis quod atque nobis, nam dolores culpa, dolorem
-      eligendi. Iste accusantium qui praesentium necessitatibus voluptates
-      repudiandae eaque, ut ullam doloribus, impedit asperiores esse repellat
-      iure fugit, quisquam accusamus. Dolorem voluptates provident aliquam,
-      deserunt molestias voluptatum minus ad doloribus ab consequatur cupiditate
-      nam distinctio, similique officia sed quasi quidem! Porro, nesciunt. Aut
-      asperiores earum mollitia, est fugiat, eius ut laudantium id aliquam quis
-      sed odit neque libero. Voluptatum animi similique molestiae alias!
-      Tenetur, architecto fugiat, culpa iusto rem minima explicabo accusantium
-      quos quasi excepturi deleniti ut repudiandae libero pariatur impedit enim
-      iste, sunt labore natus! Quas inventore ratione ex, mollitia culpa aliquam
-      illo! Enim repellat assumenda velit dicta fugiat. Dolorum cupiditate magni
-      veniam culpa dolor eius dignissimos consequuntur quis maiores esse ipsa
-      hic, ex similique sit qui sunt, sequi quod eveniet totam enim quasi.
-      Perspiciatis, nemo. Nobis fuga vel consequuntur, iste veniam, quod numquam
-      beatae provident facere doloremque quia! Rem laboriosam dolore placeat
-      ullam, facere eaque consequatur itaque, ratione aliquam architecto
-      perspiciatis neque aperiam molestias amet modi. Doloribus repudiandae
-      sequi temporibus illum, unde aliquid ut, reprehenderit eos culpa voluptas
-      iste impedit delectus architecto. Error perspiciatis impedit iste, placeat
-      repellat blanditiis eaque a obcaecati quisquam. Consectetur hic quasi
-      perferendis porro sunt nobis saepe cumque placeat eum quod, vel id et
-      aperiam similique nulla repellendus corporis eos tenetur optio eligendi!
-      Explicabo eius velit quod, nemo a debitis modi officia ex suscipit neque
-      dolorum sit animi iste vitae assumenda iusto ab repudiandae nam nostrum
-      corrupti ea, voluptatibus similique soluta! Ipsum laboriosam aperiam atque
-      magnam culpa ratione fuga, repudiandae quaerat necessitatibus unde quos.
-      Odit molestias eum, velit quasi accusamus perspiciatis unde sequi maxime
-      ex natus doloremque sit vero maiores nulla magni exercitationem labore
-      totam dolor similique voluptatem nemo quos adipisci itaque. Labore, est
-      facilis iusto sunt dolore illum, quisquam voluptate qui eum dicta pariatur
-      officiis! Quasi suscipit necessitatibus, excepturi in quam voluptatum
-      porro harum consequatur est. Nemo, laboriosam iure? Harum soluta nobis,
-      aperiam omnis ducimus non possimus neque alias odit cumque doloribus
-      assumenda fugit incidunt explicabo nemo maxime quia magni saepe nihil
-      necessitatibus aut libero quidem eius. Voluptatibus error reprehenderit
-      inventore quo officia neque voluptates! Unde deserunt qui mollitia a
-      dignissimos provident, atque sint nesciunt dolorum porro voluptas tempora
-      repellendus molestiae, accusantium dolores similique suscipit cum quasi
-      ducimus repellat? Consectetur nemo vel minus quidem perferendis cumque
-      dolore officia delectus? Delectus cupiditate aliquam in illum ab saepe
-      magni consectetur distinctio. Ut officia recusandae, aperiam quia quam
-      explicabo provident atque. Unde cupiditate pariatur totam! Aperiam
-      eligendi nisi, dolor ratione cum et quia necessitatibus quisquam provident
-      dolorum ea assumenda beatae nostrum, eius esse voluptatem nihil
-      aspernatur! Voluptas et natus dignissimos velit quo praesentium
-      perferendis eum quae placeat? A expedita placeat amet pariatur ratione
-      quas deserunt, similique, vitae, cupiditate quaerat impedit veniam
-      commodi! Ab iusto odit et corporis doloremque ex, fugiat quo, enim quas
-      molestiae consequatur autem impedit cupiditate atque unde nobis id ullam
-      excepturi ipsam neque minima vero cumque officia nesciunt. Harum magni
-      fugiat, impedit veniam fuga a quis atque debitis animi, quibusdam laborum,
-      accusantium labore! Consequatur, laborum consequuntur reiciendis magnam
-      quasi omnis obcaecati similique voluptate dolore eum numquam a tenetur
-      vitae architecto repellat dicta distinctio exercitationem alias adipisci,
-      totam vero veritatis dolorem quos? Eligendi impedit exercitationem magni
-      qui ex dolorum est, dicta cupiditate assumenda veritatis ullam illum
-      suscipit omnis iusto vitae necessitatibus quis et, pariatur ipsa? Eius
-      amet quasi nostrum soluta culpa iste sed facilis perferendis nemo, unde
-      earum architecto natus molestiae nisi voluptatem. Dignissimos repudiandae
-      vero veritatis praesentium harum voluptates rem corrupti nesciunt ducimus,
-      fuga, molestias ipsum inventore accusantium est minus labore nihil
-      voluptatem! Quibusdam illum quaerat vel molestiae? Earum in quaerat
-      dolorum, incidunt sit aperiam nulla, quisquam reiciendis a accusamus, est
-      sed voluptatem modi inventore nobis ipsam perspiciatis nisi. Corrupti
-      voluptatibus quam dolores asperiores porro repellat reprehenderit quia,
-    </Box>
+    <Stack spacing={16}>
+      {/* Full Page Header*/}
+      <VStack w="100%">
+        {/* ---Three js Background just a Image now   */}
+        {/* Need studys */}
+        <Box pos="relative" w="100%" h="50vh">
+          <Image
+            src="/matt-howard-UCDiLtfDRgU-unsplash.webp"
+            alt="Picture of the author"
+            layout="fill"
+            priority={true}
+          />
+        </Box>
+        {/* ---Welcome Line */}
+
+        {/* https://codepen.io/rachsmith/pen/BNKJme */}
+        <Text
+          fontSize={"2xl"}
+          borderWidth="1px"
+          borderRadius={"3xl"}
+          bgColor={welcomeLineBgColor}
+          w="100%"
+          textAlign={"center"}
+          p={4}
+        >
+          Welcome! I am a web developer based in Hong Kong
+        </Text>
+        {/* ---Intro and Avatar  */}
+        <HStack w="100%" justifyContent={"space-between"}>
+          <Stack>
+            <Text fontSize={"6xl"} fontWeight={"bold"}>
+              Calvin Yuen
+            </Text>
+
+            <Text fontSize={"2xl"}>React, HTML, CSS, JS</Text>
+          </Stack>
+          <Box
+            pos="relative"
+            h="150px"
+            w="150px"
+            borderRadius={"full"}
+            overflow="hidden"
+            borderWidth={"1px"}
+            borderColor="white"
+          >
+            <Image
+              src="/self-photo.jpg"
+              alt="Picture of the author"
+              layout="fill"
+              priority={true}
+            />
+          </Box>
+        </HStack>
+      </VStack>
+
+      {/* Bio */}
+      <Stack spacing={8}>
+        <IntroSection title="Bios">
+          <Grid templateColumns="100px 1fr" rowGap={4}>
+            <BioListItem year="Current">Worked at TalkBox Limited</BioListItem>
+            <BioListItem year="2021">
+              HKUST Degree in Electronic Engineering with IT minor (First Class
+              Honor)
+            </BioListItem>
+            <BioListItem year="1999">Born</BioListItem>
+          </Grid>
+        </IntroSection>
+        <IntroSection title="Works">
+          <Text>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis est
+            cupiditate quae quod iste aperiam fugiat, voluptatem alias aliquam
+            vero enim ipsa fuga minus, impedit ipsum sint? Eveniet,
+            exercitationem autem.
+          </Text>
+        </IntroSection>
+      </Stack>
+
+      {/* Contact */}
+    </Stack>
+  );
+};
+
+const IntroSection: FC<{ title: string }> = ({ title, children }) => {
+  const welcomeLineBgColor = useColorModeValue(
+    "blackAlpha.200",
+    "whiteAlpha.200"
+  );
+
+  return (
+    <Stack>
+      <Heading
+        borderColor={welcomeLineBgColor}
+        borderBottom={"4px"}
+        w="fit-content"
+        fontSize={"2xl"}
+      >
+        {title}
+      </Heading>
+      {children}
+    </Stack>
+  );
+};
+
+const BioListItem: FC<{ year: string }> = ({ year, children }) => {
+  return (
+    <>
+      <Text fontSize={"xl"} fontWeight={"bold"}>
+        {year}
+      </Text>
+      <Text fontSize={"xl"}>{children}</Text>
+    </>
   );
 };
 

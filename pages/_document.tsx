@@ -10,7 +10,13 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head />
-        <body>
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap"
+          rel="stylesheet"
+        />
+
+        <body style={{ height: "100%" }}>
           {/* 👇 Here's the script */}
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
