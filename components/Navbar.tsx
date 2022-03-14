@@ -42,7 +42,11 @@ const Navbar = () => {
   const paths = [
     { path: "/works", label: "Works" },
     { path: "/posts", label: "Posts" },
-    { path: "https://github.com/YuenSC", label: "Source", isExternal: true },
+    {
+      path: "https://github.com/YuenSC/portfolio-app",
+      label: "Source",
+      isExternal: true,
+    },
   ];
 
   return (

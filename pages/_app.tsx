@@ -10,6 +10,7 @@ import type { AppProps } from "next/app";
 import React, { FC } from "react";
 
 import theme from "./../styles/theme";
+import { MotionBox } from "../components/Motion";
 import Navbar from "../components/Navbar";
 
 const Layout: FC = ({ children }) => {
@@ -28,9 +29,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <Layout>
         <Navbar />
+
         <Container maxW="container.md" pt={40}>
           <Component {...pageProps} />
-          <Center my={10}>© 2022 Calvin Yuen. All Rights Reserved.</Center>
+          <Center py={10}>© 2022 Calvin Yuen. All Rights Reserved.</Center>
         </Container>
       </Layout>
     </ChakraProvider>
