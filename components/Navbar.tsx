@@ -19,8 +19,8 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
-import { GiBarbedSun, GiHollowCat, GiMoon } from "react-icons/gi";
+import React, { FC } from "react";
+import { GiBarbedSun, GiHollowCat, GiMoon, GiSpikesFull } from "react-icons/gi";
 
 import { MotionBox, MotionHStack } from "./Motion";
 
@@ -33,7 +33,9 @@ const rotateVariants = {
   },
 };
 
-const Navbar = () => {
+const Navbar: FC<{ onToggleFullScreen: () => void }> = ({
+  onToggleFullScreen,
+}) => {
   const router = useRouter();
 
   const { colorMode, toggleColorMode } = useColorMode();
@@ -122,6 +124,13 @@ const Navbar = () => {
 
         {/* Dark mode switch */}
         <HStack>
+          {/* Full Screen Toggle */}
+          <IconButton
+            size="lg"
+            aria-label="Toggle Full Screen"
+            onClick={onToggleFullScreen}
+            icon={<Icon as={GiSpikesFull} w={8} h={8} />}
+          />
           <IconButton
             size="lg"
             aria-label="Search database"

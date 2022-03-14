@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <Page>
-      <Stack spacing={16}>
+      <Stack spacing={20}>
         {/* Full Page Header*/}
         <VStack w="100%">
           {/* ---Three js Background just a Image now   */}
@@ -40,8 +40,8 @@ const Home: NextPage = () => {
             />
           </Box>
           {/* ---Welcome Line */}
-
           {/* https://codepen.io/rachsmith/pen/BNKJme */}
+          {/* https://codesandbox.io/s/framer-motion-responsive-text-animation-forked-92kij4 */}
           <MotionBox>
             <Text
               fontSize={"2xl"}
@@ -55,7 +55,6 @@ const Home: NextPage = () => {
               Welcome! I am a web developer based in Hong Kong
             </Text>
           </MotionBox>
-
           {/* ---Intro and Avatar  */}
           <HStack w="100%" justifyContent={"space-between"}>
             <Stack>
@@ -124,18 +123,30 @@ const IntroSection: FC<{ title: string }> = ({ title, children }) => {
 
   return (
     <Stack>
-      <Heading
-        borderColor={welcomeLineBgColor}
-        borderBottom={"4px"}
-        w="fit-content"
-        fontSize={"2xl"}
+      <MotionBox
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 50 },
+        }}
       >
-        {title}
-      </Heading>
+        <Heading
+          borderColor={welcomeLineBgColor}
+          borderBottom={"4px"}
+          w="fit-content"
+          fontSize={"2xl"}
+        >
+          {title}
+        </Heading>
+      </MotionBox>
+
       {children}
     </Stack>
   );
 };
+
+const variants = {};
 
 const BioListItem: FC<{ year: string }> = ({ year, children }) => {
   return (
