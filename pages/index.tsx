@@ -1,6 +1,5 @@
 import {
   Box,
-  Container,
   Grid,
   HStack,
   Heading,
@@ -145,8 +144,6 @@ const IntroSection: FC<{ title: string }> = ({ title, children }) => {
     </Stack>
   );
 };
-
-const variants = {};
 
 const BioListItem: FC<{ year: string }> = ({ year, children }) => {
   return (

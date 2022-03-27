@@ -1,10 +1,7 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
-  Box,
-  Button,
   Center,
   Container,
-  Flex,
   HStack,
   Icon,
   IconButton,
@@ -13,7 +10,6 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-  Text,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";

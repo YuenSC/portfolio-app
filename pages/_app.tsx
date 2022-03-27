@@ -1,7 +1,6 @@
 import {
   Box,
   BoxProps,
-  Button,
   Center,
   ChakraProvider,
   Container,
