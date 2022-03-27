@@ -37,6 +37,8 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = ({
   const { colorMode, toggleColorMode } = useColorMode();
   const navLinkBgColor = useColorModeValue("green.200", "green.500");
 
+  console.log("colorMode :>> ", colorMode);
+
   const paths = [
     { path: "/works", label: "Works" },
     { path: "/posts", label: "Posts" },
