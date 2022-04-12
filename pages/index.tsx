@@ -30,30 +30,7 @@ const Home: NextPage = () => {
         <VStack w="100%">
           {/* ---Three js Background just a Image now   */}
           {/* Need studys */}
-          <Box pos="relative" w="100%" h="50vh">
-            <Image
-              src="/matt-howard-UCDiLtfDRgU-unsplash.webp"
-              alt="Picture of the author"
-              layout="fill"
-              priority={true}
-            />
-          </Box>
-          {/* ---Welcome Line */}
-          {/* https://codepen.io/rachsmith/pen/BNKJme */}
-          {/* https://codesandbox.io/s/framer-motion-responsive-text-animation-forked-92kij4 */}
-          <MotionBox>
-            <Text
-              fontSize={"2xl"}
-              borderWidth="1px"
-              borderRadius={"3xl"}
-              bgColor={welcomeLineBgColor}
-              w="100%"
-              textAlign={"center"}
-              p={4}
-            >
-              Welcome! I am a web developer based in Hong Kong
-            </Text>
-          </MotionBox>
+
           {/* ---Intro and Avatar  */}
           <HStack w="100%" justifyContent={"space-between"}>
             <Stack>
@@ -81,6 +58,23 @@ const Home: NextPage = () => {
             </Box>
           </HStack>
         </VStack>
+
+        {/* ---Welcome Line */}
+        {/* https://codepen.io/rachsmith/pen/BNKJme */}
+        {/* https://codesandbox.io/s/framer-motion-responsive-text-animation-forked-92kij4 */}
+        <MotionBox>
+          <Text
+            fontSize={"2xl"}
+            borderWidth="1px"
+            borderRadius={"3xl"}
+            bgColor={welcomeLineBgColor}
+            w="100%"
+            textAlign={"center"}
+            p={4}
+          >
+            Welcome! I am a web developer based in Hong Kong
+          </Text>
+        </MotionBox>
 
         {/* Bio */}
         <Stack spacing={8}>
