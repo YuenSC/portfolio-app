@@ -1,5 +1,6 @@
 import {
   Box,
+  Center,
   Grid,
   HStack,
   Heading,
@@ -8,6 +9,7 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Image from "next/image";
 import { FC } from "react";
@@ -62,19 +64,34 @@ const Home: NextPage = () => {
         {/* ---Welcome Line */}
         {/* https://codepen.io/rachsmith/pen/BNKJme */}
         {/* https://codesandbox.io/s/framer-motion-responsive-text-animation-forked-92kij4 */}
-        <MotionBox>
-          <Text
-            fontSize={"2xl"}
-            borderWidth="1px"
-            borderRadius={"3xl"}
-            bgColor={welcomeLineBgColor}
-            w="100%"
-            textAlign={"center"}
-            p={4}
-          >
-            Welcome! I am a web developer based in Hong Kong
-          </Text>
-        </MotionBox>
+        <Center
+          fontSize={"2xl"}
+          borderWidth="1px"
+          borderRadius={"3xl"}
+          bgColor={welcomeLineBgColor}
+          textAlign={"center"}
+          py={4}
+        >
+          <Box w="fit-content">
+            <Text
+              as={motion.div}
+              overflow="hidden"
+              borderRight={".15em solid orange"}
+              whiteSpace="nowrap"
+              margin={"0 auto"}
+              initial={{
+                width: 0,
+              }}
+              animate={{
+                width: "100%",
+                borderColor: ["none"],
+              }}
+              transition="width 3.5s steps(40, end)"
+            >
+              Welcome! I am a web developer based in Hong Kong.
+            </Text>
+          </Box>
+        </Center>
 
         {/* Bio */}
         <Stack spacing={8}>

@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <title>Calvin Yuen's Personal Website</title>
+        <title>Calvin Yuen Personal Website</title>
       </Head>
       <Layout ref={ref}>
         <Navbar onToggleFullScreen={onToggleFullScreen} />
