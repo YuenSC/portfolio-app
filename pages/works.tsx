@@ -14,7 +14,7 @@ import { FC } from "react";
 
 import Page from "./../components/Page";
 import { MyDomain } from "./../util/constant";
-import ProfolioAppScreenShot from "../public/ProfolioAppScreenShot.png";
+import sideProject1 from "../public/sideProject1.gif";
 
 const Works: NextPage = () => {
   return (
@@ -26,18 +26,12 @@ const Works: NextPage = () => {
       >
         <GridItem>
           <ScaleUpBox>
-            <ImageLink imgSrc={ProfolioAppScreenShot} />
+            <ImageLink
+              href="https://parallax-demo-waterworld.vercel.app"
+              imgSrc={sideProject1}
+            />
             <Text textAlign={"center"} fontSize="xl">
-              This Website
-            </Text>
-          </ScaleUpBox>
-        </GridItem>
-
-        <GridItem>
-          <ScaleUpBox>
-            <ImageLink />
-            <Text textAlign={"center"} fontSize="xl">
-              Side Project 2
+              Parallax Demo
             </Text>
           </ScaleUpBox>
         </GridItem>

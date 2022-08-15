@@ -35,7 +35,7 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = ({
   const router = useRouter();
 
   const { colorMode, toggleColorMode } = useColorMode();
-  const navLinkBgColor = useColorModeValue("green.200", "green.500");
+  const navLinkBgColor = useColorModeValue("orange.200", "white");
 
   const paths = [
     { path: "/works", label: "Works" },
@@ -119,13 +119,6 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = ({
 
         {/* Dark mode switch */}
         <HStack>
-          {/* Full Screen Toggle */}
-          <IconButton
-            size="lg"
-            aria-label="Toggle Full Screen"
-            onClick={onToggleFullScreen}
-            icon={<Icon as={GiSpikesFull} w={8} h={8} />}
-          />
           <IconButton
             size="lg"
             aria-label="Search database"

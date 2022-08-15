@@ -4,13 +4,16 @@ import {
   Grid,
   HStack,
   Heading,
+  ListItem,
   Stack,
   Text,
+  UnorderedList,
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
+import { ST } from "next/dist/shared/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -40,7 +43,10 @@ const Home: NextPage = () => {
                 Calvin Yuen
               </Text>
 
-              <Text fontSize={"2xl"}>React, HTML, CSS, JS</Text>
+              <Text fontSize={"2xl"}>React, HTML, CSS, JS (Using in work)</Text>
+              <Text fontSize={"xl"} color="gray.500">
+                React Native (Learning)
+              </Text>
             </Stack>
             <Box
               pos="relative"
@@ -61,43 +67,14 @@ const Home: NextPage = () => {
           </HStack>
         </VStack>
 
-        {/* ---Welcome Line */}
-        {/* https://codepen.io/rachsmith/pen/BNKJme */}
-        {/* https://codesandbox.io/s/framer-motion-responsive-text-animation-forked-92kij4 */}
-        <Center
-          fontSize={"2xl"}
-          borderWidth="1px"
-          borderRadius={"3xl"}
-          bgColor={welcomeLineBgColor}
-          textAlign={"center"}
-          py={4}
-        >
-          <Box w="fit-content">
-            <Text
-              as={motion.div}
-              overflow="hidden"
-              borderRight={".15em solid orange"}
-              whiteSpace="nowrap"
-              margin={"0 auto"}
-              initial={{
-                width: 0,
-              }}
-              animate={{
-                width: "100%",
-                borderColor: ["none"],
-              }}
-              transition="width 3.5s steps(40, end)"
-            >
-              Welcome! I am a web developer based in Hong Kong.
-            </Text>
-          </Box>
-        </Center>
-
         {/* Bio */}
         <Stack spacing={8}>
-          <IntroSection title="Works">
+          <IntroSection title="Contact">
+            <Text fontSize={"2xl"}>scyuenab@gmail.com</Text>
+          </IntroSection>
+          <IntroSection title="Intro">
             <Text>
-              After graduating from HKUST , I started my career as a Web
+              After graduating from HKUST, I started my career as a Web
               Developer in Talkbox Limited in Aug 2021. Currently, I am building
               console app for its internal products and project. Therefore, it
               is sad that I cannot show you publicly what is creating in my
@@ -108,7 +85,17 @@ const Home: NextPage = () => {
           <IntroSection title="Bios">
             <Grid templateColumns="100px 1fr" rowGap={4}>
               <BioListItem year="Current">
-                Worked as Web Developer in TalkBox Limited
+                <Stack spacing={0}>
+                  <Text>Worked as Web Developer in TalkBox Limited</Text>
+                  <UnorderedList pl="8">
+                    <ListItem>
+                      <Text fontSize={"md"} color="gray.500">
+                        React v17.0 for building a property management console
+                        app from scratch
+                      </Text>
+                    </ListItem>
+                  </UnorderedList>
+                </Stack>
               </BioListItem>
               <BioListItem year="2021">
                 HKUST Degree in Electronic Engineering with IT minor (First
@@ -118,8 +105,6 @@ const Home: NextPage = () => {
             </Grid>
           </IntroSection>
         </Stack>
-
-        {/* Contact */}
       </Stack>
     </Page>
   );

@@ -15,6 +15,16 @@ const colors = {
 };
 
 // 3. extend the theme
-const theme = extendTheme({ config, colors });
+const theme = extendTheme({
+  config,
+  colors,
+  styles: {
+    global: {
+      body: {
+        bg: "red",
+      },
+    },
+  },
+});
 
 export default theme;
