@@ -48,7 +48,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <Container maxW="container.md" pt={40}>
           <Component {...pageProps} />
-          <Center py={10}>© 2022 Calvin Yuen. All Rights Reserved</Center>
         </Container>
       </Layout>
     </ChakraProvider>

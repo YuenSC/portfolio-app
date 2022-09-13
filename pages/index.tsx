@@ -1,30 +1,28 @@
 import {
   Box,
-  Center,
-  Grid,
   HStack,
   Heading,
   ListItem,
   Stack,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
   Text,
+  Tr,
   UnorderedList,
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import type { NextPage } from "next";
-import { ST } from "next/dist/shared/lib/utils";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import { MotionBox } from "../components/Motion";
 import Page from "../components/Page";
 
 const Home: NextPage = () => {
-  const welcomeLineBgColor = useColorModeValue(
-    "blackAlpha.200",
-    "whiteAlpha.200"
-  );
+  const [isShowingAnimation, setIsShowingAnimation] = useState(false);
 
   const avatorBorderColor = useColorModeValue("black", "white");
 
@@ -32,20 +30,35 @@ const Home: NextPage = () => {
     <Page>
       <Stack spacing={20}>
         {/* Full Page Header*/}
-        <VStack w="100%">
-          {/* ---Three js Background just a Image now   */}
-          {/* Need studys */}
-
+        <VStack
+          w="100%"
+          {...(isShowingAnimation && {
+            pos: "absolute",
+            inset: "0",
+            bgColor: "orange.100",
+            zIndex: "overlay",
+          })}
+        >
           {/* ---Intro and Avatar  */}
-          <HStack w="100%" justifyContent={"space-between"}>
+          <HStack
+            w="100%"
+            justifyContent={"space-between"}
+            {...(isShowingAnimation && {
+              flexDirection: "column-reverse",
+              h: "100%",
+              justifyContent: "center",
+            })}
+          >
             <Stack>
               <Text fontSize={"6xl"} fontWeight={"bold"}>
-                Calvin Yuen
+                {isShowingAnimation ? "Welcome to Calvin Web" : "Calvin Yuen"}
               </Text>
 
-              <Text fontSize={"2xl"}>React, HTML, CSS, JS (Using in work)</Text>
-              <Text fontSize={"xl"} color="gray.500">
-                React Native (Learning)
+              <Text
+                fontSize={"2xl"}
+                {...(isShowingAnimation && { display: "none" })}
+              >
+                React, HTML, CSS, JS
               </Text>
             </Stack>
             <Box
@@ -56,6 +69,11 @@ const Home: NextPage = () => {
               overflow="hidden"
               borderWidth={"2px"}
               borderColor={avatorBorderColor}
+              {...(isShowingAnimation && {
+                borderRadius: "none",
+                h: "200px",
+                w: "200px",
+              })}
             >
               <Image
                 src="/self-photo.jpg"
@@ -75,34 +93,37 @@ const Home: NextPage = () => {
           <IntroSection title="Intro">
             <Text>
               After graduating from HKUST, I started my career as a Web
-              Developer in Talkbox Limited in Aug 2021. Currently, I am building
-              console app for its internal products and project. Therefore, it
-              is sad that I cannot show you publicly what is creating in my
-              work. I would try to build some side projects in my spare time and
-              hope that you can already see those project here.
+              Developer in Talkbox Limited from Aug 2021 to Aug 2022. Most of my
+              work is to build console app for its internal products and
+              project. Currently, I am learning React Native to discover more
+              about the frontend world.
             </Text>
           </IntroSection>
           <IntroSection title="Bios">
-            <Grid templateColumns="100px 1fr" rowGap={4}>
-              <BioListItem year="Current">
-                <Stack spacing={0}>
-                  <Text>Worked as Web Developer in TalkBox Limited</Text>
-                  <UnorderedList pl="8">
-                    <ListItem>
-                      <Text fontSize={"md"} color="gray.500">
-                        React v17.0 for building a property management console
-                        app from scratch
-                      </Text>
-                    </ListItem>
-                  </UnorderedList>
-                </Stack>
-              </BioListItem>
-              <BioListItem year="2021">
-                HKUST Degree in Electronic Engineering with IT minor (First
-                Class Honor)
-              </BioListItem>
-              <BioListItem year="1999">Born</BioListItem>
-            </Grid>
+            <TableContainer>
+              <Table variant={"unstyled"}>
+                <Tbody>
+                  <BioListItemRow year="Current">
+                    <Stack spacing={2}>
+                      <Text>Worked as Web Developer in TalkBox Limited</Text>
+                      <UnorderedList pl="8">
+                        <ListItem>
+                          <Text fontSize={"md"} color="gray.500">
+                            React v17.0 for building Airside Property Management
+                            console app from scratch (Web part only)
+                          </Text>
+                        </ListItem>
+                      </UnorderedList>
+                    </Stack>
+                  </BioListItemRow>
+                  <BioListItemRow year="2021">
+                    HKUST Degree in Electronic Engineering with IT minor (First
+                    Class Honor)
+                  </BioListItemRow>
+                  <BioListItemRow year="1999">Born</BioListItemRow>
+                </Tbody>
+              </Table>
+            </TableContainer>
           </IntroSection>
         </Stack>
       </Stack>
@@ -141,14 +162,18 @@ const IntroSection: FC<{ title: string }> = ({ title, children }) => {
   );
 };
 
-const BioListItem: FC<{ year: string }> = ({ year, children }) => {
+const BioListItemRow: FC<{ year: string }> = ({ year, children }) => {
   return (
-    <>
-      <Text fontSize={"xl"} fontWeight={"bold"}>
-        {year}
-      </Text>
-      <Text fontSize={"xl"}>{children}</Text>
-    </>
+    <Tr>
+      <Td verticalAlign={"top"} pl="0">
+        <Text fontSize={"xl"} fontWeight={"bold"}>
+          {year}
+        </Text>
+      </Td>
+      <Td whiteSpace="pre-wrap">
+        <Text fontSize={"xl"}>{children}</Text>
+      </Td>
+    </Tr>
   );
 };
 
