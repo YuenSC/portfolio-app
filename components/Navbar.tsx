@@ -54,6 +54,8 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = ({
       left={"50%"}
       transform="translateX(-50%)"
       zIndex={"overlay"}
+      className="hidden-print"
+      w="100%"
     >
       <HStack
         py={4}

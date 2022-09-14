@@ -1,14 +1,15 @@
+import "../global.css";
+
 import {
   Box,
   BoxProps,
-  Center,
   ChakraProvider,
   Container,
   useColorModeValue,
 } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import React, { forwardRef, useRef } from "react";
+import { forwardRef, useRef } from "react";
 
 import theme from "./../styles/theme";
 import Navbar from "../components/Navbar";
@@ -18,7 +19,18 @@ const Layout = forwardRef<HTMLDivElement, BoxProps>(({ children }, ref) => {
   const color = useColorModeValue("black", "white");
 
   return (
-    <Box ref={ref} bgColor={bgColor} color={color} minH="100vh" h="100%">
+    <Box
+      ref={ref}
+      bgColor={bgColor}
+      color={color}
+      minH="100vh"
+      h="100%"
+      sx={{
+        "@media print": {
+          bgColor: "white",
+        },
+      }}
+    >
       {children}
     </Box>
   );
@@ -46,7 +58,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout ref={ref}>
         <Navbar onToggleFullScreen={onToggleFullScreen} />
 
-        <Container maxW="container.md" pt={40}>
+        <Container
+          maxW="container.md"
+          pt={40}
+          sx={{
+            "@media print": {
+              paddingTop: 0,
+            },
+          }}
+        >
           <Component {...pageProps} />
         </Container>
       </Layout>
