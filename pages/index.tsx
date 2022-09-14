@@ -54,7 +54,7 @@ const Home: NextPage = () => {
             },
           }}
         >
-          <Stack>
+          <Stack spacing={0}>
             <Text fontSize={"6xl"} fontWeight={"bold"}>
               {isShowingAnimation ? "Welcome to Calvin Web" : "Calvin Yuen"}
             </Text>
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
               fontSize={"2xl"}
               {...(isShowingAnimation && { display: "none" })}
             >
-              React, HTML, CSS, JS
+              React, HTML, CSS, Typescript
             </Text>
             <HStack
               fontSize={"md"}
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
                 },
               }}
             >
-              <Text>Porfolio: </Text>
+              <Text>Portfolio: </Text>
               <Link
                 isExternal
                 href="https://portfolio-app-teal.vercel.app/works"
@@ -96,6 +96,12 @@ const Home: NextPage = () => {
               h: "200px",
               w: "200px",
             })}
+            sx={{
+              "@media print": {
+                // paddingTop: 0,
+                display: "none",
+              },
+            }}
           >
             <Image
               src="/self-photo.jpg"
@@ -119,7 +125,14 @@ const Home: NextPage = () => {
         }}
       >
         <IntroSection title="Contact">
-          <Text fontSize={"2xl"}>scyuenab@gmail.com</Text>
+          <HStack>
+            <Text>Email:</Text>
+            <Text>scyuenab@gmail.com</Text>
+          </HStack>
+          <HStack>
+            <Text>Phone:</Text>
+            <Text>5168 7161</Text>
+          </HStack>
         </IntroSection>
         <IntroSection title="Intro">
           <Text>
@@ -133,8 +146,18 @@ const Home: NextPage = () => {
         </IntroSection>
         <IntroSection title="Bios">
           <BioListItemRow year="2022-2021">
-            <Stack spacing={2}>
-              <Text>Worked as Web Developer in TalkBox Limited</Text>
+            <Stack spacing={0}>
+              <Text>
+                Worked as Web Developer in{" "}
+                <Link
+                  href="https://talkbox.app/"
+                  isExternal
+                  color="blue.700"
+                  textDecoration={"underline"}
+                >
+                  TalkBox Limited
+                </Link>
+              </Text>
               <UnorderedList pl="8">
                 <ListItem>
                   <Text fontSize={"md"} color="gray.500">
@@ -146,10 +169,10 @@ const Home: NextPage = () => {
             </Stack>
           </BioListItemRow>
           <BioListItemRow year="2021-2017">
-            <Stack spacing={2}>
+            <Stack spacing={0}>
               <Text>
-                HKUST Degree in Electronic Engineering with IT minor (First
-                Class Honor)
+                The Hong Kong university of Science and Technology BEng in
+                Electronic Engineering with IT minor (First Class Honor)
               </Text>
               <UnorderedList pl="8">
                 <ListItem>
