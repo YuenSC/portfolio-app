@@ -19,11 +19,7 @@ import sideProject1 from "../public/sideProject1.gif";
 const Works: NextPage = () => {
   return (
     <Page>
-      <Grid
-        templateRows="repeat(2, 1fr)"
-        templateColumns="repeat(2, 1fr)"
-        gap={10}
-      >
+      <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={10}>
         <GridItem>
           <ScaleUpBox>
             <ImageLink
