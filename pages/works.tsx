@@ -31,6 +31,17 @@ const Works: NextPage = () => {
             </Text>
           </ScaleUpBox>
         </GridItem>
+        <GridItem>
+          <ScaleUpBox>
+            <ImageLink
+              href="https://line-clone-five.vercel.app/"
+              imgSrc={"/sideProject2.png"}
+            />
+            <Text textAlign={"center"} fontSize="xl">
+              Line Clone (Not fully done)
+            </Text>
+          </ScaleUpBox>
+        </GridItem>
       </Grid>
     </Page>
   );
@@ -54,17 +65,17 @@ const ImageLink: FC<{
         _hover={{
           textDecoration: "none",
         }}
+        borderRadius={16}
+        overflow="hidden"
       >
-        <Center
-          h="300px"
-          bg={bg}
-          pos="relative"
-          border={border}
-          borderRadius={16}
-          overflow="hidden"
-        >
+        <Center h="300px" bg={bg} pos="relative" border={border}>
           {imgSrc ? (
-            <Image src={imgSrc} alt="post image" layout="fill" />
+            <Image
+              src={imgSrc}
+              alt="post image"
+              layout="fill"
+              objectFit="cover"
+            />
           ) : (
             "Coming Soon"
           )}
