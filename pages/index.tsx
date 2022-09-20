@@ -212,7 +212,7 @@ const Home: NextPage = () => {
           </HStack>
           <HStack>
             <Text>Expected salary :</Text>
-            <Text>HKD30000</Text>
+            <Text>HKD 28,000</Text>
           </HStack>
         </IntroSection>
       </Stack>
