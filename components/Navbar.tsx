@@ -11,6 +11,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Text,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -99,18 +100,23 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
             return (
               <NextLink key={path} href={path} passHref>
                 <Link
+                  flex={1}
                   px={4}
                   textAlign="center"
                   fontSize={"xl"}
                   userSelect={"none"}
                   outline="none"
                   _focus={{ boxShadow: "none" }}
+                  _hover={{ textDecoration: "none" }}
                   isExternal={isExternal}
-                  fontWeight={isCurrentPath ? "bold" : "normal"}
-                  textDecoration="none"
                   position="relative"
                 >
-                  <Center h={"14"}>{label}</Center>
+                  <Text
+                    fontWeight={isCurrentPath ? "bold" : "normal"}
+                    textShadow="0 0 0.01px black"
+                  >
+                    {label}
+                  </Text>
                   {isCurrentPath && (
                     <Box
                       w={8}

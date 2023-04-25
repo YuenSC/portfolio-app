@@ -38,7 +38,7 @@ const Works: NextPage = () => {
               imgSrc={"/sideProject2.png"}
             />
             <Text textAlign={"center"} fontSize="xl">
-              Line Clone (Not fully done)
+              Line Product Page Clone (Not fully done)
             </Text>
           </ScaleUpBox>
         </GridItem>
