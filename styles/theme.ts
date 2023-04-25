@@ -12,6 +12,7 @@ const colors = {
     800: "#153e75",
     700: "#2a69ac",
   },
+  darkOrange: "#ff9100",
 };
 
 // 3. extend the theme

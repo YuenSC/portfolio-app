@@ -10,9 +10,8 @@ import {
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { forwardRef, useRef } from "react";
-
-import theme from "./../styles/theme";
 import Navbar from "../components/Navbar";
+import theme from "./../styles/theme";
 
 const Layout = forwardRef<HTMLDivElement, BoxProps>(({ children }, ref) => {
   const bgColor = useColorModeValue("rgb(240, 231, 219)", "rgb(32,32,35)");
@@ -31,6 +30,11 @@ const Layout = forwardRef<HTMLDivElement, BoxProps>(({ children }, ref) => {
         },
       }}
     >
+      <style jsx global>{`
+        body {
+          background-color: ${bgColor};
+        }
+      `}</style>
       {children}
     </Box>
   );

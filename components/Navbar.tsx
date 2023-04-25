@@ -1,5 +1,6 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
+  Box,
   Center,
   Container,
   HStack,
@@ -15,8 +16,8 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import React, { FC } from "react";
-import { GiBarbedSun, GiHollowCat, GiMoon, GiSpikesFull } from "react-icons/gi";
+import { FC } from "react";
+import { GiBarbedSun, GiHollowCat, GiMoon } from "react-icons/gi";
 
 import { MotionBox, MotionHStack } from "./Motion";
 
@@ -29,12 +30,9 @@ const rotateVariants = {
   },
 };
 
-const Navbar: FC<{ onToggleFullScreen: () => void }> = ({
-  onToggleFullScreen,
-}) => {
+const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
   const router = useRouter();
 
-  const { colorMode, toggleColorMode } = useColorMode();
   const navLinkBgColor = useColorModeValue("orange.200", "white");
 
   const paths = [
@@ -105,59 +103,31 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = ({
                   textAlign="center"
                   fontSize={"xl"}
                   userSelect={"none"}
-                  _active={{ bgColor: navLinkBgColor, color: "black" }}
+                  outline="none"
+                  _focus={{ boxShadow: "none" }}
                   isExternal={isExternal}
-                  {...(isCurrentPath && {
-                    bgColor: navLinkBgColor,
-                    color: "black",
-                  })}
+                  fontWeight={isCurrentPath ? "bold" : "normal"}
+                  textDecoration="none"
+                  position="relative"
                 >
                   <Center h={"14"}>{label}</Center>
+                  {isCurrentPath && (
+                    <Box
+                      w={8}
+                      h={8}
+                      bgColor={"darkOrange"}
+                      position={"absolute"}
+                      zIndex={-1}
+                      borderRadius={"50%"}
+                      top={"50%"}
+                      left={"50%"}
+                      transform={"translate(-50%, -50%)"}
+                    />
+                  )}
                 </Link>
               </NextLink>
             );
           })}
-        </HStack>
-
-        {/* Dark mode switch */}
-        <HStack>
-          <IconButton
-            size="lg"
-            aria-label="Search database"
-            onClick={toggleColorMode}
-            icon={
-              colorMode === "light" ? (
-                <Icon as={GiMoon} w={8} h={8} />
-              ) : (
-                <Icon as={GiBarbedSun} w={8} h={8} />
-              )
-            }
-          />
-
-          <Menu placement="bottom-end">
-            <MenuButton
-              as={IconButton}
-              size="lg"
-              icon={<HamburgerIcon w={8} h={8} />}
-              display={{ base: "block", lg: "none" }}
-            >
-              Actions
-            </MenuButton>
-            <MenuList>
-              {paths.map(({ path, label, isExternal }) => {
-                return (
-                  <MenuItem key={path}>
-                    <NextLink href={path} passHref>
-                      <Link w="100%" h="100%" isExternal={isExternal}>
-                        {label}
-                      </Link>
-                    </NextLink>
-                  </MenuItem>
-                );
-              })}
-            </MenuList>
-          </Menu>
-          {/* Mobile Nav Menu */}
         </HStack>
       </HStack>
     </Container>
