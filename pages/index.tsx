@@ -1,21 +1,20 @@
 import {
   Box,
   Flex,
-  HStack,
   Heading,
+  HStack,
   Link,
   ListItem,
   Stack,
   StackProps,
   Text,
   UnorderedList,
-  VStack,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import { FC, useState } from "react";
-
 import { MotionBox } from "../components/Motion";
 import Page from "../components/Page";
 
@@ -131,20 +130,84 @@ const Home: NextPage = () => {
           </HStack>
           <HStack>
             <Text>Phone:</Text>
-            <Text>5168 7161</Text>
+            <Text>+852 5168 7161</Text>
           </HStack>
         </IntroSection>
         <IntroSection title="Intro">
           <Text>
-            After graduating from HKUST, I started my career as a Web Developer
-            in Talkbox Limited from Aug 2021 to Aug 2022. Most of my work is to
-            build console app for its internal products and project. I felt
-            satisfied when created some interesting and valuable thing in
-            frontend. Currently, I am learning React Native to discover more
-            about the frontend world.
+            Mid-level Frontend Developer with experience in building web and
+            mobile app using React, React Native, and TypeScript. A team player
+            with a strong ability to collaborate with cross-functional teams and
+            effectively communicate technical concepts. Currently seeking
+            opportunities in Japan to further contribute and grow
           </Text>
         </IntroSection>
         <IntroSection title="Bios">
+          <BioListItemRow year="2024">
+            <Stack spacing={0}>
+              <Text>
+                <Link
+                  href="https://www.credly.com/badges/014f01d5-6241-4af3-9a65-df4163e9e342/linked_in?t=s82nvd"
+                  isExternal
+                  color="blue.700"
+                  textDecoration={"underline"}
+                >
+                  AWS Certified Solutions Architect – Associate
+                </Link>
+              </Text>
+            </Stack>
+          </BioListItemRow>
+          <BioListItemRow year="2024-2022">
+            <Stack spacing={0}>
+              <Text>
+                Worked as Frontend Engineer in{" "}
+                <Link
+                  href="https://www.app-bar.com/"
+                  isExternal
+                  color="blue.700"
+                  textDecoration={"underline"}
+                >
+                  App Bar
+                </Link>
+              </Text>
+              <UnorderedList pl="8">
+                <ListItem>
+                  <Text fontSize={"md"} color="gray.500">
+                    Actively engaged in the development of numerous features for
+                    the mobile app{" "}
+                    <Link
+                      href="https://apps.apple.com/hk/app/a-life/id1670325684?l=en-GB"
+                      isExternal
+                      color="blue.700"
+                      textDecoration={"underline"}
+                    >
+                      A.Life
+                    </Link>{" "}
+                    by React Native
+                  </Text>
+                </ListItem>
+                <ListItem>
+                  <Text fontSize={"md"} color="gray.500">
+                    Developed and implemented multiple features for the{" "}
+                    <Link
+                      href="https://apps.apple.com/hk/app/huma-by-axa/id6443894886?l=en-GB"
+                      isExternal
+                      color="blue.700"
+                      textDecoration={"underline"}
+                    >
+                      HUMA By AXA
+                    </Link>{" "}
+                    mobile app using React Native.
+                  </Text>
+                </ListItem>
+                <ListItem>
+                  <Text fontSize={"md"} color="gray.500">
+                    Build the CMS of the A.Life and HUMA by AXA by Next.js
+                  </Text>
+                </ListItem>
+              </UnorderedList>
+            </Stack>
+          </BioListItemRow>
           <BioListItemRow year="2022-2021">
             <Stack spacing={0}>
               <Text>
@@ -171,8 +234,8 @@ const Home: NextPage = () => {
           <BioListItemRow year="2021-2017">
             <Stack spacing={0}>
               <Text>
-                The Hong Kong university of Science and Technology BEng in
-                Electronic Engineering with IT minor (First Class Honor)
+                The Hong Kong university of Science and Technology Bachelor of
+                Engineering in Electronic Engineering (First Class Honor)
               </Text>
               <UnorderedList pl="8">
                 <ListItem>

@@ -12,6 +12,7 @@ import Head from "next/head";
 import { forwardRef, useRef } from "react";
 import Navbar from "../components/Navbar";
 import theme from "./../styles/theme";
+import Footer from "../components/Footer";
 
 const Layout = forwardRef<HTMLDivElement, BoxProps>(({ children }, ref) => {
   const bgColor = useColorModeValue("rgb(240, 231, 219)", "rgb(32,32,35)");
@@ -72,6 +73,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
         >
           <Component {...pageProps} />
+        </Container>
+        <Container maxW="container.lg" px={{ sm: 4, md: 16 }}>
+          <Footer />
         </Container>
       </Layout>
     </ChakraProvider>

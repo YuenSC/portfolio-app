@@ -1,25 +1,8 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Center,
-  Container,
-  HStack,
-  Icon,
-  IconButton,
-  Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Text,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Container, HStack, Icon, Link, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
-import { GiBarbedSun, GiHollowCat, GiMoon } from "react-icons/gi";
-
+import { GiHollowCat } from "react-icons/gi";
 import { MotionBox, MotionHStack } from "./Motion";
 
 const rotateVariants = {
@@ -33,8 +16,6 @@ const rotateVariants = {
 
 const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
   const router = useRouter();
-
-  const navLinkBgColor = useColorModeValue("orange.200", "white");
 
   const paths = [
     { path: "/works", label: "Works" },
