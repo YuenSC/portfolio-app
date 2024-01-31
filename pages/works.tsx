@@ -38,7 +38,7 @@ const Works: NextPage = () => {
               imgSrc={"/sideProject2.png"}
             />
             <Text textAlign={"center"} fontSize="xl">
-              Line Product Page Clone (Not fully done)
+              Line Product Page Clone (Partial)
             </Text>
           </ScaleUpBox>
         </GridItem>
@@ -51,8 +51,6 @@ const ImageLink: FC<{
   href?: string;
   imgSrc?: string | StaticImageData;
 }> = ({ href = MyDomain, imgSrc }) => {
-  const border = useColorModeValue("none", "1px solid white");
-
   const bg = useColorModeValue("gray.300", "gray.500");
 
   return (
@@ -68,7 +66,7 @@ const ImageLink: FC<{
         borderRadius={16}
         overflow="hidden"
       >
-        <Center h="300px" bg={bg} pos="relative" border={border}>
+        <Center h="300px" bg={bg} pos="relative">
           {imgSrc ? (
             <Image
               src={imgSrc}
