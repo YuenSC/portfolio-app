@@ -73,8 +73,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
         >
           <Component {...pageProps} />
-        </Container>
-        <Container maxW="container.lg" px={{ sm: 4, md: 16 }}>
           <Footer />
         </Container>
       </Layout>

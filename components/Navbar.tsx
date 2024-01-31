@@ -1,7 +1,16 @@
-import { Box, Container, HStack, Icon, Link, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  HStack,
+  Icon,
+  Link,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
+import { CgDarkMode } from "react-icons/cg";
 import { GiHollowCat } from "react-icons/gi";
 import { MotionBox, MotionHStack } from "./Motion";
 
@@ -16,6 +25,8 @@ const rotateVariants = {
 
 const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
   const router = useRouter();
+
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const paths = [
     { path: "/works", label: "Works" },
@@ -39,7 +50,6 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
     >
       <HStack
         py={4}
-        px={4}
         justifyContent="space-between"
         backdropFilter={"blur(5px)"}
         w="100%"
@@ -60,7 +70,7 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
             <Link
               userSelect={"none"}
               fontWeight={"bold"}
-              fontSize="2xl"
+              fontSize={{ base: "lg", md: "2xl" }}
               letterSpacing={"-1px"}
               _hover={{ textDecoration: "none" }}
               _focus={{ boxShadow: "none" }}
@@ -115,6 +125,12 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
               </NextLink>
             );
           })}
+          <CgDarkMode
+            size={24}
+            cursor="pointer"
+            color={colorMode === "dark" ? "white" : "black"}
+            onClick={toggleColorMode}
+          />
         </HStack>
       </HStack>
     </Container>
