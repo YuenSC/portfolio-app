@@ -6,6 +6,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const darkAnimationKeyframes = keyframes`
   0% { color : black}
@@ -25,6 +26,12 @@ type AnimatedTitleProps = TextProps & {
 
 const AnimatedTitle = ({ title, ...props }: AnimatedTitleProps) => {
   const [key, setKey] = useState(new Date().toISOString());
+  const { ref } = useInView({
+    onChange: () => {
+      setKey(new Date().toISOString());
+    },
+  });
+
   const animation = useColorModeValue(
     `${darkAnimationKeyframes} 1s ease-in-out 1`,
     `${lightAnimationKeyframes} 1s ease-in-out 1`
@@ -37,11 +44,9 @@ const AnimatedTitle = ({ title, ...props }: AnimatedTitleProps) => {
 
   return (
     <HStack
+      ref={ref}
       spacing={0}
-      onMouseEnter={() => {
-        console.log("first");
-        setKey(new Date().toISOString());
-      }}
+      onMouseEnter={() => setKey(new Date().toISOString())}
     >
       {title.split("").map((char, index) => {
         return (
