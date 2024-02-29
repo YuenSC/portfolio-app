@@ -17,6 +17,7 @@ import Image from "next/image";
 import { FC, useState } from "react";
 import { MotionBox } from "../components/Motion";
 import Page from "../components/Page";
+import AnimatedTitle from "../components/AnimatedTitle";
 
 const Home: NextPage = () => {
   const [isShowingAnimation, setIsShowingAnimation] = useState(false);
@@ -54,9 +55,13 @@ const Home: NextPage = () => {
           }}
         >
           <Stack spacing={0}>
-            <Text fontSize={"6xl"} fontWeight={"bold"}>
-              {isShowingAnimation ? "Welcome to Calvin Web" : "Calvin Yuen"}
-            </Text>
+            <AnimatedTitle
+              fontSize={"6xl"}
+              fontWeight={"bold"}
+              title={
+                isShowingAnimation ? "Welcome to Calvin Web" : "Calvin Yuen"
+              }
+            />
 
             <Text
               fontSize={"2xl"}
@@ -146,6 +151,7 @@ const Home: NextPage = () => {
           <BioListItemRow year="2024">
             <Stack spacing={0}>
               <Text>
+                Passed the{" "}
                 <Link
                   href="https://www.credly.com/badges/014f01d5-6241-4af3-9a65-df4163e9e342/linked_in?t=s82nvd"
                   isExternal
