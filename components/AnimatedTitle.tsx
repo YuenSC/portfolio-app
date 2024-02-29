@@ -30,6 +30,11 @@ const AnimatedTitle = ({ title, ...props }: AnimatedTitleProps) => {
     `${lightAnimationKeyframes} 1s ease-in-out 1`
   );
 
+  const shuffledArray = Array.from(
+    { length: title.length },
+    (_, i) => i + 1
+  ).sort(() => Math.random() - 0.5);
+
   return (
     <HStack
       spacing={0}
@@ -39,15 +44,13 @@ const AnimatedTitle = ({ title, ...props }: AnimatedTitleProps) => {
       }}
     >
       {title.split("").map((char, index) => {
-        console.log(char);
         return (
           <Box
             key={char + index + key}
             minW="3"
             animation={animation}
             style={{
-              animationDelay:
-                ((index + Math.floor(Math.random() * 3)) % 3) * 0.3 + "s",
+              animationDelay: shuffledArray[index] * 0.1 + "s",
             }}
             {...props}
           >
