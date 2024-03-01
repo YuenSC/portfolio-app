@@ -19,7 +19,44 @@ import sideProject1 from "../public/sideProject1.gif";
 const Works: NextPage = () => {
   return (
     <Page>
+      <Text fontSize="4xl" fontWeight="bold" mb={4}>
+        Side Project
+      </Text>
       <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={10}>
+        <GridItem>
+          <ScaleUpBox>
+            <ImageLink
+              href="https://resume-creator-calvin-yuen.vercel.app/"
+              imgSrc={"/resume-creator.png"}
+            />
+            <Text textAlign={"center"} fontSize="xl">
+              Resume Creator (Next.js)
+            </Text>
+            <Text textAlign={"center"} fontSize="sm" mt={0} color="gray.500">
+              Last Update: 2024 MAR
+            </Text>
+          </ScaleUpBox>
+        </GridItem>
+      </Grid>
+      <Text fontSize="4xl" fontWeight="bold" my={8}>
+        Basic HTML CSS Demo
+      </Text>
+      <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={10}>
+        <GridItem>
+          <ScaleUpBox>
+            <ImageLink
+              href="https://line-clone-five.vercel.app/"
+              imgSrc={"/sideProject2.png"}
+            />
+            <Text textAlign={"center"} fontSize="xl">
+              Line Product Page Clone (Partial)
+            </Text>
+            <Text textAlign={"center"} fontSize="sm" mt={0} color="gray.500">
+              Last Update: 2022
+            </Text>
+          </ScaleUpBox>
+        </GridItem>
+
         <GridItem>
           <ScaleUpBox>
             <ImageLink
@@ -29,16 +66,8 @@ const Works: NextPage = () => {
             <Text textAlign={"center"} fontSize="xl">
               Parallax Demo
             </Text>
-          </ScaleUpBox>
-        </GridItem>
-        <GridItem>
-          <ScaleUpBox>
-            <ImageLink
-              href="https://line-clone-five.vercel.app/"
-              imgSrc={"/sideProject2.png"}
-            />
-            <Text textAlign={"center"} fontSize="xl">
-              Line Product Page Clone (Partial)
+            <Text textAlign={"center"} fontSize="sm" mt={0} color="gray.500">
+              Last Update: 2021
             </Text>
           </ScaleUpBox>
         </GridItem>
@@ -89,6 +118,7 @@ const ScaleUpBox: FC = ({ children }) => {
       _hover={{
         transform: "scale(1.05)",
       }}
+      spacing={0}
       transition="all 0.3s"
     >
       {children}
