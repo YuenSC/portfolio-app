@@ -1,20 +1,18 @@
 import {
-  Center,
+  Box,
   Grid,
   GridItem,
+  HStack,
   Link,
-  Stack,
   Text,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Image from "next/image";
-import NextLink from "next/link";
-import { FC } from "react";
-
+import { IconType } from "react-icons";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import Page from "./../components/Page";
-import { MyDomain } from "./../util/constant";
-import sideProject1 from "../public/sideProject1.gif";
 
 const Works: NextPage = () => {
   return (
@@ -24,18 +22,23 @@ const Works: NextPage = () => {
       </Text>
       <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={10}>
         <GridItem>
-          <ScaleUpBox>
-            <ImageLink
-              href="https://resume-creator-calvin-yuen.vercel.app/"
-              imgSrc={"/resume-creator.png"}
-            />
-            <Text textAlign={"center"} fontSize="xl">
-              Resume Creator (Next.js)
-            </Text>
-            <Text textAlign={"center"} fontSize="sm" mt={0} color="gray.500">
-              Last Update: 2024 MAR
-            </Text>
-          </ScaleUpBox>
+          <Card
+            title="Resume Creator (Next.js)"
+            subtitle="Last Update: 2024 MAR"
+            imgSrc={"/resume-creator.png"}
+            links={[
+              {
+                href: "https://resume-creator-calvin-yuen.vercel.app/",
+                label: "Project",
+                icon: FaExternalLinkAlt,
+              },
+              {
+                href: "https://github.com/YuenSC/resume-maker",
+                label: "Code",
+                icon: FaGithub,
+              },
+            ]}
+          />
         </GridItem>
       </Grid>
       <Text fontSize="4xl" fontWeight="bold" my={8}>
@@ -43,86 +46,112 @@ const Works: NextPage = () => {
       </Text>
       <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={10}>
         <GridItem>
-          <ScaleUpBox>
-            <ImageLink
-              href="https://line-clone-five.vercel.app/"
-              imgSrc={"/sideProject2.png"}
-            />
-            <Text textAlign={"center"} fontSize="xl">
-              Line Product Page Clone (Partial)
-            </Text>
-            <Text textAlign={"center"} fontSize="sm" mt={0} color="gray.500">
-              Last Update: 2022
-            </Text>
-          </ScaleUpBox>
+          <Card
+            title="Line Product Page Clone (Partial)"
+            subtitle="Last Update: 2022"
+            imgSrc={"/sideProject2.png"}
+            links={[
+              {
+                href: "https://line-clone-five.vercel.app/",
+                label: "Project",
+                icon: FaExternalLinkAlt,
+              },
+              {
+                href: "https://github.com/YuenSC/line-clone",
+                label: "Code",
+                icon: FaGithub,
+              },
+            ]}
+          />
         </GridItem>
 
         <GridItem>
-          <ScaleUpBox>
-            <ImageLink
-              href="https://parallax-demo-waterworld.vercel.app"
-              imgSrc={sideProject1}
-            />
-            <Text textAlign={"center"} fontSize="xl">
-              Parallax Demo
-            </Text>
-            <Text textAlign={"center"} fontSize="sm" mt={0} color="gray.500">
-              Last Update: 2021
-            </Text>
-          </ScaleUpBox>
+          <Card
+            title="Parallax Demo"
+            subtitle="Last Update: 2022"
+            imgSrc={"/sideProject1.gif"}
+            links={[
+              {
+                href: "https://parallax-demo-waterworld.vercel.app",
+                label: "Project",
+                icon: FaExternalLinkAlt,
+              },
+              {
+                href: "https://github.com/YuenSC/parallax-demo-waterworld",
+                label: "Code",
+                icon: FaGithub,
+              },
+            ]}
+          />
         </GridItem>
       </Grid>
     </Page>
   );
 };
 
-const ImageLink: FC<{
-  href?: string;
-  imgSrc?: string | StaticImageData;
-}> = ({ href = MyDomain, imgSrc }) => {
+const Card = ({
+  imgSrc,
+  links,
+  subtitle,
+  title,
+}: {
+  imgSrc: string;
+  links: {
+    icon: IconType;
+    href: string;
+    label: string;
+  }[];
+  title: string;
+  subtitle: string;
+}) => {
   const bg = useColorModeValue("gray.300", "gray.500");
 
   return (
-    <NextLink href={href} passHref>
-      <Link
-        textAlign="center"
-        fontSize={"xl"}
-        userSelect={"none"}
-        isExternal={true}
-        _hover={{
-          textDecoration: "none",
-        }}
-        borderRadius={16}
-        overflow="hidden"
-      >
-        <Center h="300px" bg={bg} pos="relative">
-          {imgSrc ? (
-            <Image
-              src={imgSrc}
-              alt="post image"
-              layout="fill"
-              objectFit="cover"
-            />
-          ) : (
-            "Coming Soon"
-          )}
-        </Center>
-      </Link>
-    </NextLink>
-  );
-};
-
-const ScaleUpBox: FC = ({ children }) => {
-  return (
-    <Stack
-      _hover={{
-        transform: "scale(1.05)",
-      }}
-      spacing={0}
-      transition="all 0.3s"
-    >
-      {children}
-    </Stack>
+    <Box role="group">
+      <Box h="300px" bg={bg} pos="relative" borderRadius="md" overflow="hidden">
+        <Image src={imgSrc} alt="post image" layout="fill" objectFit="cover" />
+        <HStack
+          justifyContent="center"
+          pos="absolute"
+          w="100%"
+          h="100%"
+          spacing={8}
+          bg="rgba(77,77,77,0.4)"
+          transition="all 0.1s"
+          transform="translateX(100%)"
+          _groupHover={{
+            transform: "translateX(0)",
+          }}
+          _focusWithin={{
+            transform: "translateX(0)",
+          }}
+        >
+          {links.map(({ href, label, icon: Icon }) => (
+            <Link
+              key={href}
+              href={href}
+              userSelect={"none"}
+              textDecoration="none"
+              isExternal={true}
+              color="gray.100"
+            >
+              <VStack spacing={0.5}>
+                <Icon size={40} />
+                <Text fontWeight="bold" fontSize="sm">
+                  {label}
+                </Text>
+              </VStack>
+            </Link>
+          ))}
+        </HStack>
+      </Box>
+      <Text textAlign={"center"} fontSize="xl" mt={2}>
+        {title}
+      </Text>
+      <Text textAlign={"center"} fontSize="sm" mt={0} color="gray.500">
+        {subtitle}
+      </Text>
+    </Box>
   );
 };
 
