@@ -1,5 +1,6 @@
 import "../global.css";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
 import {
   Box,
   BoxProps,
@@ -76,6 +77,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Footer />
         </Container>
       </Layout>
+      <GoogleAnalytics gaId="G-8WL0B2M97P" />
     </ChakraProvider>
   );
 }
