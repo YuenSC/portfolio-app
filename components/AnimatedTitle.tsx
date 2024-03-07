@@ -5,7 +5,7 @@ import {
   TextProps,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 const darkAnimationKeyframes = keyframes`
@@ -26,6 +26,7 @@ type AnimatedTitleProps = TextProps & {
 
 const AnimatedTitle = ({ title, ...props }: AnimatedTitleProps) => {
   const [key, setKey] = useState(new Date().toISOString());
+  const isSetKeyRef = useRef(false);
   const { ref } = useInView({
     onChange: () => {
       setKey(new Date().toISOString());
@@ -42,18 +43,23 @@ const AnimatedTitle = ({ title, ...props }: AnimatedTitleProps) => {
     (_, i) => i + 1
   ).sort(() => Math.random() - 0.5);
 
+  const handleMouseEnter = useCallback(() => {
+    if (isSetKeyRef.current) return;
+    setKey(new Date().toISOString());
+    isSetKeyRef.current = true;
+  }, []);
+
   return (
-    <HStack
-      ref={ref}
-      spacing={0}
-      onMouseEnter={() => setKey(new Date().toISOString())}
-    >
+    <HStack ref={ref} spacing={0} onMouseEnter={handleMouseEnter}>
       {title.split("").map((char, index) => {
         return (
           <Box
             key={char + index + key}
             minW="3"
             animation={animation}
+            onAnimationEnd={() => {
+              isSetKeyRef.current = false;
+            }}
             style={{
               animationDelay: shuffledArray[index] * 0.1 + "s",
             }}
