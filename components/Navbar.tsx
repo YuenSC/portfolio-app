@@ -1,15 +1,30 @@
 import {
+  ChevronRightIcon,
+  ExternalLinkIcon,
+  HamburgerIcon,
+} from "@chakra-ui/icons";
+import {
   Box,
   Container,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
   HStack,
   Icon,
+  IconButton,
   Link,
+  Stack,
   Text,
   useColorMode,
+  useDisclosure,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { CgDarkMode } from "react-icons/cg";
 import { GiHollowCat } from "react-icons/gi";
 import { MotionBox, MotionHStack } from "./Motion";
@@ -27,6 +42,9 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
   const router = useRouter();
 
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const drawerDisclosure = useDisclosure();
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   const paths = [
     { path: "/works", label: "Works" },
@@ -125,6 +143,7 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
               </NextLink>
             );
           })}
+
           <CgDarkMode
             size={24}
             cursor="pointer"
@@ -132,6 +151,67 @@ const Navbar: FC<{ onToggleFullScreen: () => void }> = () => {
             onClick={toggleColorMode}
           />
         </HStack>
+
+        {/* Drawer in mobile */}
+        <Box display={{ lg: "none" }}>
+          <IconButton
+            ref={btnRef}
+            aria-label="Drawer"
+            icon={<HamburgerIcon />}
+            onClick={drawerDisclosure.onOpen}
+          />
+          <Drawer
+            isOpen={drawerDisclosure.isOpen}
+            placement="right"
+            onClose={drawerDisclosure.onClose}
+            finalFocusRef={btnRef}
+          >
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              <DrawerHeader>
+                <NextLink href="/" passHref onClick={drawerDisclosure.onClose}>
+                  <Link>Calvin Yuen Portfolio</Link>
+                </NextLink>
+              </DrawerHeader>
+
+              <DrawerBody as={Stack} gap="8px">
+                <NextLink
+                  href="/works"
+                  passHref
+                  onClick={drawerDisclosure.onClose}
+                >
+                  <Link
+                    as={HStack}
+                    fontSize="xl"
+                    justifyContent="space-between"
+                  >
+                    <Text>Work</Text>
+                    <ChevronRightIcon w="8" h="8" />
+                  </Link>
+                </NextLink>
+                <Link
+                  href="https://github.com/YuenSC/portfolio-app"
+                  fontSize="xl"
+                  isExternal
+                >
+                  <HStack>
+                    <Text>Source</Text>
+                    <ExternalLinkIcon />
+                  </HStack>
+                </Link>
+              </DrawerBody>
+              <DrawerFooter>
+                <CgDarkMode
+                  size={36}
+                  cursor="pointer"
+                  color={colorMode === "dark" ? "white" : "black"}
+                  onClick={toggleColorMode}
+                />
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+        </Box>
       </HStack>
     </Container>
   );
