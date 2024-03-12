@@ -23,7 +23,7 @@ const Works: NextPage = () => {
       <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={10}>
         <GridItem>
           <Card
-            title="Resume Creator (Next.js)"
+            title="Resume Creator (Next.js 14 + tailwindcss + shadcn/ui)"
             subtitle="Last Update: 2024 MAR"
             imgSrc={"/resume-creator.png"}
             links={[
@@ -47,7 +47,7 @@ const Works: NextPage = () => {
       <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={10}>
         <GridItem>
           <Card
-            title="Line Product Page Clone (Partial)"
+            title="Line Product Page Clone (Next.js 12 + Chakra UI)"
             subtitle="Last Update: 2022"
             imgSrc={"/sideProject2.png"}
             links={[
@@ -67,7 +67,7 @@ const Works: NextPage = () => {
 
         <GridItem>
           <Card
-            title="Parallax Demo"
+            title="Parallax Demo (Next.js 12 + Chakra UI)"
             subtitle="Last Update: 2022"
             imgSrc={"/sideProject1.gif"}
             links={[

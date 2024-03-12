@@ -26,7 +26,7 @@ type AnimatedTitleProps = TextProps & {
 
 const AnimatedTitle = ({ title, ...props }: AnimatedTitleProps) => {
   const [key, setKey] = useState(new Date().toISOString());
-  const isSetKeyRef = useRef(false);
+  const isSetKeyRef = useRef(true);
   const { ref } = useInView({
     onChange: () => {
       setKey(new Date().toISOString());
