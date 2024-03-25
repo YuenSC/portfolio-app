@@ -1,0 +1,30 @@
+image: node:18.17
+definitions:
+  services:
+    docker:
+      memory: 1024 #increasing docker service memory
+  steps:
+    - step: &build-web-app-uat
+        name: Build
+        caches:
+          - node
+        script:
+          - yarn install
+          - yarn build
+        artifacts:
+          - out/**
+pipelines:
+  branches:
+    master:
+      - step: *build-web-app-uat
+      - step:
+          name: Deploy to UAT
+          script:
+            - pipe: microsoft/azure-storage-deploy:2.0.1
+              variables:
+                SOURCE: 'out/*'
+                DESTINATION: 'https://mcdonaldsdev.blob.core.windows.net/%24web/'
+                DESTINATION_SAS_TOKEN: $AZURE_STORAGE_SAS_TOKEN
+                EXTRA_ARGS: '--recursive'
+                DEBUG: 'true'
+
