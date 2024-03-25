@@ -5,6 +5,8 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import "./globals.css";
 import { poppins } from "@/lib/fonts";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -44,9 +46,11 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <body className={poppins.className}>
-        <main>
+        <main className="bg-background">
           <NextIntlClientProvider locale={locale} messages={messages}>
+            <NavBar />
             {children}
+            <Footer />
           </NextIntlClientProvider>
           <GoogleAnalytics gaId="G-8WL0B2M97P" />
         </main>
