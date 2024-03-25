@@ -48,7 +48,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <main className="bg-background">
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <NavBar />
+            <NavBar locale={locale} />
             {children}
             <Footer />
           </NextIntlClientProvider>

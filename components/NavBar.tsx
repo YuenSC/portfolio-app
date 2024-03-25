@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { memo } from "react";
 
-const NavBar = () => {
+const NavBar = ({ locale }: { locale: string }) => {
   return (
     <div className="flex items-center justify-between">
-      <div>Calvin Yuen</div>
+      <Link href={`/${locale}`}>Calvin Yuen</Link>
       <div></div>
     </div>
   );
