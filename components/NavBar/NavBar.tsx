@@ -41,7 +41,7 @@ const NavBar = ({ locale }: { locale: string }) => {
 
   return (
     <div className="sticky top-0 z-40">
-      <div className="absolute top-[-13%] -z-20 h-[120%] w-full bg-background opacity-75 blur-sm"></div>
+      <div className="absolute left-[-5%] top-[-13%] -z-20 h-[120%] w-[120%] bg-background opacity-75 blur-sm"></div>
 
       <div className="container flex h-[var(--nav-bar-height)] items-center justify-between px-4">
         <Link href={`/${locale}`}>
