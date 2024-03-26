@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="sticky top-[var(--nav-bar-height)] z-0 flex min-h-[80vh] items-center">
+    <div className="flex min-h-[80vh] items-center">
       <div className="relative -mt-8 flex w-full flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}

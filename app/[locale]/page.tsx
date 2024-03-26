@@ -14,13 +14,18 @@ export default function Page({
 
   return (
     <div>
-      <Hero />
-      <PageLayout className="relative z-20 min-h-screen bg-red-300">
-        <h2>About</h2>
-      </PageLayout>
-      <PageLayout className="min-h-screen bg-slate-600">
-        <h2>Project</h2>
-      </PageLayout>
+      <div className="sticky top-[var(--nav-bar-height)] z-0 ">
+        <Hero />
+      </div>
+
+      <div className="relative z-20">
+        <div className="min-h-screen bg-red-300">
+          <h2>About</h2>
+        </div>
+        <div className="min-h-screen bg-slate-600">
+          <h2>Project</h2>
+        </div>
+      </div>
     </div>
   );
 }

@@ -16,6 +16,13 @@ import RippleEffect from "../RippleEffect";
 import { Button } from "../ui/button";
 import NavBarTitle from "./NavBarTitle";
 import DarkModeToggle from "../DarkModeToggle";
+import NavBarNavList from "./NavBarNavList";
+
+export type NavItem = {
+  isExternal: boolean;
+  href: string;
+  label: string;
+};
 
 const NavBar = ({ locale }: { locale: string }) => {
   const t = useTranslations();
@@ -23,7 +30,7 @@ const NavBar = ({ locale }: { locale: string }) => {
   const routes = useMemo(() => {
     return [
       {
-        href: "/",
+        href: `/${locale}`,
         label: t("NavBar.home"),
         isExternal: false,
       },
@@ -32,16 +39,12 @@ const NavBar = ({ locale }: { locale: string }) => {
         isExternal: true,
         label: t("NavBar.source"),
       },
-    ] as {
-      isExternal: boolean;
-      href: string;
-      label: string;
-    }[];
-  }, [t]);
+    ] satisfies NavItem[];
+  }, [locale, t]);
 
   return (
     <div className="sticky top-0 z-40">
-      <div className="absolute left-[-5%] top-[-13%] -z-20 h-[120%] w-[120%] bg-background opacity-75 blur-sm"></div>
+      <div className="absolute top-[-13%] -z-20 h-[120%] w-full bg-background opacity-75 blur-sm"></div>
 
       <div className="container flex h-[var(--nav-bar-height)] items-center justify-between px-4">
         <Link href={`/${locale}`}>
@@ -49,6 +52,8 @@ const NavBar = ({ locale }: { locale: string }) => {
         </Link>
 
         <div className="flex items-center gap-3">
+          <NavBarNavList routes={routes} />
+
           <DarkModeToggle />
           <Drawer direction="top">
             <DrawerTrigger asChild className="md:hidden">
@@ -65,13 +70,13 @@ const NavBar = ({ locale }: { locale: string }) => {
                 {routes.map((route, index) => {
                   return (
                     <RippleEffect key={index} className="py-2">
-                      <a
+                      <Link
                         href={route.href}
                         target={route.isExternal ? "_blank" : "_self"}
                         className="block text-lg text-gray-800 hover:text-gray-900"
                       >
                         {route.label}
-                      </a>
+                      </Link>
                     </RippleEffect>
                   );
                 })}

@@ -34,6 +34,7 @@ const config = {
         input: "var(--input)",
         ring: "var(--ring)",
         background: "var(--background)",
+        "background-reversed": "var(--background-reversed)",
         foreground: "var(--foreground)",
         primary: {
           DEFAULT: "var(--primary)",

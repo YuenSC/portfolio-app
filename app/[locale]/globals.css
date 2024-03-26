@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --background: #f0e7db;
+    --background-reversed: #020817;
     --foreground: hsl(222.2 84% 4.9%);
 
     --card: hsl(0 0% 100%);
@@ -42,6 +43,7 @@
 
   .dark {
     --background: #020817;
+    --background-reversed: #f0e7db;
     --foreground: hsl(210 40% 98%);
 
     --card: hsl(222.2 84% 4.9%);
