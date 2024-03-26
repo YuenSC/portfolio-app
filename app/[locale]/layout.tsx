@@ -5,7 +5,7 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import "./globals.css";
 import { poppins } from "@/lib/fonts";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer";
 
 export function generateStaticParams() {
@@ -22,13 +22,13 @@ export async function generateMetadata({
   return {
     title: t("Metadata.title"),
     description: t("Metadata.description"),
-    openGraph: {
-      type: "website",
-      locale,
-      title: t("Metadata.title"),
-      siteName: t("Metadata.title"),
-      description: t("Metadata.description"),
-    },
+    // openGraph: {
+    //   type: "website",
+    //   locale,
+    //   title: t("Metadata.title"),
+    //   siteName: t("Metadata.title"),
+    //   description: t("Metadata.description"),
+    // },
   } as Metadata;
 }
 
