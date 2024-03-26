@@ -5,6 +5,7 @@ import { NavItem } from "./NavBar";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const NavBarNavList = ({ routes }: { routes: NavItem[] }) => {
   const router = useRouter();
@@ -22,7 +23,12 @@ const NavBarNavList = ({ routes }: { routes: NavItem[] }) => {
             target={route.isExternal ? "_blank" : "_self"}
             className="group relative"
           >
-            <div className="bg-background-reversed absolute bottom-0 h-0.5 w-full transition-[height] group-hover:h-full" />
+            <div
+              className={cn(
+                "bg-background-reversed absolute bottom-0 h-0 w-full transition-[height] group-hover:h-full",
+                pathname === route.href && "h-0.5",
+              )}
+            />
 
             <p className="border-background-reversed px-2 text-lg text-white mix-blend-difference">
               {route.label}
