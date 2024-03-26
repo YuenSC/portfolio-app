@@ -1,26 +1,64 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import { ArrowDownFromLineIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { memo } from "react";
 
+const listVariants: Variants = {
+  hidden: {
+    clipPath: "polygon(100% 0, 100% 0, 32% 0, 0 0, 0 0)",
+  },
+  visible: {
+    clipPath: [
+      "polygon(100% 0, 100% 40%, 32% 60%, 0 40%, 0 0)",
+      "polygon(100% 0, 100% 40%, 32% 60%, 0 40%, 0 0)",
+      "polygon(100% 0, 100% 100%, 32% 100%, 0 100%, 0 0)",
+    ],
+    transition: {
+      duration: 0.8,
+      times: [0.4, 0.6, 1],
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.5,
+    },
+  },
+};
+
 const Hero = () => {
   const t = useTranslations();
 
   return (
-    <div className="relative flex min-h-[calc(100svh-var(--nav-bar-height))] w-full items-center">
-      <div className="relative -mt-8 flex w-full flex-col items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full border-4 border-black dark:border-white xl:max-w-[350px]"
-        >
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={listVariants}
+      className="relative flex min-h-[calc(100svh-var(--nav-bar-height))] w-full bg-background"
+    >
+      <motion.div
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative -mt-8 flex w-full flex-col items-center justify-center"
+      >
+        <motion.div className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full border-4 border-black dark:border-white xl:max-w-[350px]">
           <Image src="self-photo.jpg" alt="Calvin Yuen's image" fill />
         </motion.div>
 
-        <div className="-mt-12 w-full overflow-hidden bg-background lg:-mt-24">
+        <div className="-mt-12 w-full overflow-hidden lg:-mt-24">
           <div className="flex">
             {Array.from(Array(10).keys()).map((_, index) => (
               <p
@@ -35,9 +73,14 @@ const Hero = () => {
             {t("Home.frontend-developer")}
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="absolute bottom-7 flex w-full items-center justify-center">
+      <motion.div
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+        className="absolute bottom-7 flex w-full items-center justify-center"
+      >
         <motion.div
           animate={{
             y: [0, 10, 0],
@@ -53,8 +96,8 @@ const Hero = () => {
         >
           <ArrowDownFromLineIcon />
         </motion.div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -14,7 +14,8 @@ export default function Page({
 
   return (
     <div>
-      <div className="sticky top-[var(--nav-bar-height)] z-0 ">
+      <div className="sticky top-[var(--nav-bar-height)] z-0">
+        <div className="absolute inset-0 bg-background brightness-90 dark:bg-gray-800" />
         <Hero />
       </div>
 

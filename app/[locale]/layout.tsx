@@ -53,7 +53,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="bg-background">
+          <main>
             <NextIntlClientProvider locale={locale} messages={messages}>
               <NavBar locale={locale} />
               {children}
