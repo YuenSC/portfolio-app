@@ -17,6 +17,7 @@ import { Button } from "../ui/button";
 import NavBarTitle from "./NavBarTitle";
 import DarkModeToggle from "../DarkModeToggle";
 import NavBarNavList from "./NavBarNavList";
+import LanguageToggle from "../LanguageToggle";
 
 export type NavItem = {
   isExternal: boolean;
@@ -44,7 +45,7 @@ const NavBar = ({ locale }: { locale: string }) => {
 
   return (
     <div className="sticky top-0 z-40">
-      <div className="absolute top-[-13%] -z-20 h-[120%] w-full bg-background opacity-75 blur-sm"></div>
+      <div className="absolute -z-20 h-[100%] w-full bg-background"></div>
 
       <div className="container flex h-[var(--nav-bar-height)] items-center justify-between px-4">
         <Link href={`/${locale}`}>
@@ -55,6 +56,7 @@ const NavBar = ({ locale }: { locale: string }) => {
           <NavBarNavList routes={routes} />
 
           <DarkModeToggle />
+          <LanguageToggle />
           <Drawer direction="top">
             <DrawerTrigger asChild className="md:hidden">
               <Menu />
@@ -73,7 +75,7 @@ const NavBar = ({ locale }: { locale: string }) => {
                       <Link
                         href={route.href}
                         target={route.isExternal ? "_blank" : "_self"}
-                        className="block text-lg text-gray-800 hover:text-gray-900"
+                        className="block text-lg text-gray-800 dark:text-white"
                       >
                         {route.label}
                       </Link>

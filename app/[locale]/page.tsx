@@ -18,13 +18,13 @@ export default function Page({
         <Hero />
       </div>
 
-      <div className="relative z-20">
-        <div className="min-h-screen bg-red-300">
-          <h2>About</h2>
-        </div>
-        <div className="min-h-screen bg-slate-600">
-          <h2>Project</h2>
-        </div>
+      <div className="relative z-20 w-full">
+        <PageLayout className="bg-slate-600">
+          <h2 className="text-3xl font-semibold">Projects</h2>
+        </PageLayout>
+        <PageLayout className="bg-red-100" id="about">
+          <h2 className="text-3xl font-semibold">About</h2>
+        </PageLayout>
       </div>
     </div>
   );

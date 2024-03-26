@@ -6,9 +6,24 @@ import { getRequestConfig } from "next-intl/server";
 export enum LocaleEnum {
   en = "en",
   zh = "zh-HK",
+  jp = "ja",
 }
 
-export const locales = [LocaleEnum.en, LocaleEnum.zh];
+export const locales = [LocaleEnum.en, LocaleEnum.zh, LocaleEnum.jp];
+export const localesWithLabel = [
+  {
+    locale: LocaleEnum.en,
+    label: "English",
+  },
+  {
+    locale: LocaleEnum.zh,
+    label: "繁體中文",
+  },
+  {
+    locale: LocaleEnum.jp,
+    label: "日本語",
+  },
+];
 // export const localePrefix = "always"; // Default
 
 export default getRequestConfig(async ({ locale }) => {

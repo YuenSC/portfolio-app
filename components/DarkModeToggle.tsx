@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { memo, useCallback } from "react";
 
-const ModeToggle = () => {
+const DarkModeToggle = () => {
   const { setTheme, theme } = useTheme();
 
   const handleClick = useCallback(() => {
@@ -22,4 +22,4 @@ const ModeToggle = () => {
   );
 };
 
-export default memo(ModeToggle);
+export default memo(DarkModeToggle);

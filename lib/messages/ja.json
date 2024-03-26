@@ -1,0 +1,14 @@
+{
+  "Home": {
+    "frontend-developer": "フロントエンドの開発者",
+    "name": "カルビン・ユエン"
+  },
+  "Metadata": {
+    "description": "Calvin Yuen は香港在住のフロントエンド開発者です。彼は美しく機能的なウェブサイトを作成することに情熱を注いでいます。",
+    "title": "Calvin Yuen - ポートフォリオ"
+  },
+  "NavBar": {
+    "home": "ホームページ",
+    "source": "GitHub"
+  }
+}

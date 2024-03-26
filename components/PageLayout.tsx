@@ -4,11 +4,20 @@ import { ReactNode, memo } from "react";
 const PageLayout = ({
   children,
   className,
+  id,
 }: {
   children: ReactNode;
   className?: string;
+  id?: string;
 }) => {
-  return <div className={cn("relative z-10", className)}>{children}</div>;
+  return (
+    <div
+      className={cn("min-h-screen  pt-[var(--nav-bar-height)]", className)}
+      id={id}
+    >
+      <div className={cn("container px-4")}>{children}</div>
+    </div>
+  );
 };
 
 export default memo(PageLayout);

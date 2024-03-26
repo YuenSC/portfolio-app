@@ -1,10 +1,14 @@
 {
+  "Home": {
+    "frontend-developer": "Frontend Developer",
+    "name": "Calvin Yuen"
+  },
   "Metadata": {
     "description": "Calvin Yuen is a front-end developer based in Hong Kong. He is passionate about creating beautiful and functional websites.",
     "title": "Calvin Yuen - Portfolio"
   },
   "NavBar": {
-    "source": "Source",
-    "home": "Home"
+    "home": "Home Page",
+    "source": "GitHub"
   }
 }
