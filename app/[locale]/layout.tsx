@@ -7,6 +7,7 @@ import "./globals.css";
 import { poppins } from "@/lib/fonts";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -44,16 +45,23 @@ export default function RootLayout({
   const messages = useMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={poppins.className}>
-        <main className="bg-background">
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <NavBar locale={locale} />
-            {children}
-            <Footer />
-          </NextIntlClientProvider>
-          <GoogleAnalytics gaId="G-8WL0B2M97P" />
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="bg-background">
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              <NavBar locale={locale} />
+              {children}
+              <Footer />
+            </NextIntlClientProvider>
+            <GoogleAnalytics gaId="G-8WL0B2M97P" />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

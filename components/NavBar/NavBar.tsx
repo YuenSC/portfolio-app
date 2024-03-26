@@ -15,6 +15,7 @@ import { memo, useMemo } from "react";
 import RippleEffect from "../RippleEffect";
 import { Button } from "../ui/button";
 import NavBarTitle from "./NavBarTitle";
+import DarkModeToggle from "../DarkModeToggle";
 
 const NavBar = ({ locale }: { locale: string }) => {
   const t = useTranslations();
@@ -39,45 +40,53 @@ const NavBar = ({ locale }: { locale: string }) => {
   }, [t]);
 
   return (
-    <div className="container flex items-center justify-between px-4 py-4">
-      <Link href={`/${locale}`}>
-        <NavBarTitle />
-      </Link>
-      <Drawer direction="top">
-        <DrawerTrigger asChild className="md:hidden">
-          <Menu />
-        </DrawerTrigger>
-        <DrawerContent className="bottom-12">
-          <DrawerHeader>
-            <DrawerTitle>
-              <NavBarTitle />
-            </DrawerTitle>
-          </DrawerHeader>
+    <div className="sticky top-0 z-40">
+      <div className="absolute top-[-13%] -z-20 h-[120%] w-full bg-background opacity-75 blur-sm"></div>
 
-          <div className="px-6">
-            {routes.map((route, index) => {
-              return (
-                <RippleEffect key={index} className="py-2">
-                  <a
-                    href={route.href}
-                    target={route.isExternal ? "_blank" : "_self"}
-                    className="block text-lg text-gray-800 hover:text-gray-900"
-                  >
-                    {route.label}
-                  </a>
-                </RippleEffect>
-              );
-            })}
-          </div>
-          <DrawerFooter>
-            <DrawerClose asChild>
-              <Button size="icon" variant="ghost" className="self-end">
-                <PanelTopCloseIcon />
-              </Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
+      <div className="container flex h-[var(--nav-bar-height)] items-center justify-between px-4">
+        <Link href={`/${locale}`}>
+          <NavBarTitle />
+        </Link>
+
+        <div className="flex items-center gap-3">
+          <DarkModeToggle />
+          <Drawer direction="top">
+            <DrawerTrigger asChild className="md:hidden">
+              <Menu />
+            </DrawerTrigger>
+            <DrawerContent className="bottom-12">
+              <DrawerHeader>
+                <DrawerTitle>
+                  <NavBarTitle />
+                </DrawerTitle>
+              </DrawerHeader>
+
+              <div className="px-6">
+                {routes.map((route, index) => {
+                  return (
+                    <RippleEffect key={index} className="py-2">
+                      <a
+                        href={route.href}
+                        target={route.isExternal ? "_blank" : "_self"}
+                        className="block text-lg text-gray-800 hover:text-gray-900"
+                      >
+                        {route.label}
+                      </a>
+                    </RippleEffect>
+                  );
+                })}
+              </div>
+              <DrawerFooter>
+                <DrawerClose asChild>
+                  <Button size="icon" variant="ghost" className="self-end">
+                    <PanelTopCloseIcon />
+                  </Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+        </div>
+      </div>
     </div>
   );
 };
