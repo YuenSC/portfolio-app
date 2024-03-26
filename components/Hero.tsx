@@ -32,7 +32,7 @@ const itemVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       delay: 0.5,
     },
   },
@@ -48,13 +48,13 @@ const Hero = () => {
       variants={listVariants}
       className="relative flex min-h-[calc(100svh-var(--nav-bar-height))] w-full bg-background"
     >
-      <motion.div
-        variants={itemVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative -mt-8 flex w-full flex-col items-center justify-center"
-      >
-        <motion.div className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full border-4 border-black dark:border-white xl:max-w-[350px]">
+      <motion.div className="relative -mt-8 flex w-full flex-col items-center justify-center">
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full border-4 border-black dark:border-white xl:max-w-[350px]"
+        >
           <Image src="self-photo.jpg" alt="Calvin Yuen's image" fill />
         </motion.div>
 
