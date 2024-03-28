@@ -56,7 +56,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="relative flex flex-col self-auto overflow-hidden py-40  antialiased [perspective:1000px] [transform-style:preserve-3d]"
+      className="relative flex flex-col self-auto overflow-hidden py-40 antialiased [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -85,14 +85,18 @@ export const HeroParallax = ({
 export const Header = () => {
   const t = useTranslations();
   return (
-    <div className="relative left-0 top-0 mx-auto w-full max-w-7xl px-4 py-12">
+    <motion.div
+      initial={{ y: 30, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1, transition: { delay: 0.3 } }}
+      className="container mx-auto w-full px-4 py-12"
+    >
       <h1 className="whitespace-pre-line text-2xl font-bold md:text-7xl dark:text-white">
         {t("ProjectPage.some-interesting-nside-projects")}
       </h1>
       <p className="mt-8 max-w-2xl text-base md:text-xl dark:text-neutral-200">
         {t("ProjectPage.description")}
       </p>
-    </div>
+    </motion.div>
   );
 };
 

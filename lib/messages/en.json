@@ -1,4 +1,8 @@
 {
+  "AboutPage": {
+    "about": "About Me",
+    "description": "Mid-level <HighlightText>Frontend</HighlightText> Developer with experience in building web and mobile app using <HighlightText>React, React Native, and TypeScript</HighlightText>. A team player with a strong ability to collaborate with cross-functional teams and effectively communicate technical concepts. Currently seeking opportunities in <HighlightText>Japan</HighlightText> to further contribute and grow"
+  },
   "Home": {
     "frontend-developer": "Frontend Developer",
     "name": "Calvin Yuen"

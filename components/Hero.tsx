@@ -91,7 +91,7 @@ const Hero = () => {
           }}
           className="cursor-pointer"
           onClick={() => {
-            const aboutElement = document.getElementById("about");
+            const aboutElement = document.getElementById("project");
             aboutElement?.scrollIntoView({ behavior: "smooth" });
           }}
         >

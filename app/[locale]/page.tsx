@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 import PageLayout from "@/components/PageLayout";
 import ProjectPage from "@/components/projects/ProjectPage";
+import AboutPage from "@/components/about/AboutPage";
 
 export default function Page({
   params: { locale },
@@ -21,11 +22,17 @@ export default function Page({
       </div>
 
       <div className="relative z-20 w-full">
-        <PageLayout className="min-h-screen bg-slate-600" id="project">
+        <PageLayout
+          className="min-h-screen bg-slate-600 text-white"
+          id="project"
+        >
           <ProjectPage />
         </PageLayout>
-        <PageLayout className="min-h-screen bg-red-100" id="about">
-          <h2 className="text-3xl font-semibold">About</h2>
+        <PageLayout
+          className="bg-background pt-[var(--nav-bar-height)]"
+          id="about"
+        >
+          <AboutPage />
         </PageLayout>
       </div>
     </div>

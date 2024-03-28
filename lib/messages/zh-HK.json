@@ -1,4 +1,8 @@
 {
+  "AboutPage": {
+    "about": "關於我",
+    "description": "中級 <HighlightText>Frontend</HighlightText> 開發人員，擁有使用 <HighlightText>React、React Native 和 TypeScript</HighlightText> 建立 Web 和行動應用程式的經驗。具有強大的團隊合作精神，能夠與跨職能團隊合作並有效溝通技術概念。\n目前正在<HighlightText>日本</HighlightText>尋求進一步貢獻和成長的機會"
+  },
   "Home": {
     "frontend-developer": "前端開發者",
     "name": "Calvin Yuen"
@@ -12,8 +16,10 @@
     "source": "GitHub"
   },
   "ProjectPage": {
+    "description": "我喜歡建立副項目來解決我的現實生活問題。\n這是我建造的一些項目",
     "my-porfolio": "我的作品集",
-    "resume-creator": "履歷創建者"
+    "resume-creator": "履歷創建者",
+    "some-interesting-nside-projects": "一些有趣的\n業餘項目"
   },
   "common": {
     "coming-soon": "即將推出（應該是 React Native 應用程式）"
