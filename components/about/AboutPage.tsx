@@ -198,7 +198,7 @@ const AboutPage = () => {
         <StickyScroll content={content} />
       </div>
 
-      <div className="min-h-screen bg-background"></div>
+      <div className="min-h-[30vh] bg-background"></div>
     </motion.div>
   );
 };

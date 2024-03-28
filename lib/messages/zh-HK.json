@@ -20,7 +20,10 @@
     "title": "Calvin Yuen - 作品集"
   },
   "NavBar": {
+    "aboutMe": "關於我",
     "home": "首頁",
+    "intro": "介紹",
+    "project": "專案",
     "source": "GitHub"
   },
   "ProjectPage": {

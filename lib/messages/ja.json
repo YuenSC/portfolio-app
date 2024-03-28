@@ -20,7 +20,10 @@
     "title": "Calvin Yuen - ポートフォリオ"
   },
   "NavBar": {
+    "aboutMe": "私について",
     "home": "ホームページ",
+    "intro": "導入",
+    "project": "プロジェクト",
     "source": "GitHub"
   },
   "ProjectPage": {

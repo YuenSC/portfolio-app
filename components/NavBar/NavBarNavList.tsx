@@ -18,9 +18,6 @@ const NavBarNavList = ({ routes }: { routes: NavItem[] }) => {
           ? undefined
           : route.href.split("#")[1] ?? "";
 
-        console.log(route.href);
-        console.log("hashInRoute", hashInRoute);
-        console.log("hash?.split", hash?.split("#")[1]);
         return (
           <Link
             key={index}
