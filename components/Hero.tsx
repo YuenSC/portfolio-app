@@ -5,6 +5,7 @@ import { ArrowDownFromLineIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { memo } from "react";
+import { BackgroundBeams } from "./ui/background-beams";
 
 const listVariants: Variants = {
   hidden: {
@@ -53,7 +54,7 @@ const Hero = () => {
           variants={itemVariants}
           initial="hidden"
           animate="visible"
-          className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full border-4 border-black dark:border-white xl:max-w-[350px]"
+          className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full border-4 border-black xl:max-w-[350px] dark:border-white"
         >
           <Image src="self-photo.jpg" alt="Calvin Yuen's image" fill />
         </motion.div>
@@ -63,13 +64,13 @@ const Hero = () => {
             {Array.from(Array(10).keys()).map((_, index) => (
               <p
                 key={index}
-                className="animate-infinite-scrolling-text whitespace-nowrap px-6 text-6xl italic text-white mix-blend-difference dark:text-white lg:text-9xl"
+                className="animate-infinite-scrolling-text whitespace-nowrap px-6 text-6xl italic text-white mix-blend-difference lg:text-9xl dark:text-white"
               >
                 {t("Home.name")}
               </p>
             ))}
           </div>
-          <div className="text-center italic text-black dark:text-white lg:text-xl">
+          <div className="text-center italic text-black lg:text-xl dark:text-white">
             {t("Home.frontend-developer")}
           </div>
         </div>
@@ -97,6 +98,7 @@ const Hero = () => {
           <ArrowDownFromLineIcon />
         </motion.div>
       </motion.div>
+      <BackgroundBeams className="hidden dark:block" />
     </motion.div>
   );
 };
