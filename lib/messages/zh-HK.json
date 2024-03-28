@@ -10,5 +10,12 @@
   "NavBar": {
     "home": "首頁",
     "source": "GitHub"
+  },
+  "ProjectPage": {
+    "my-porfolio": "我的作品集",
+    "resume-creator": "履歷創建者"
+  },
+  "common": {
+    "coming-soon": "即將推出（應該是 React Native 應用程式）"
   }
 }

@@ -10,5 +10,12 @@
   "NavBar": {
     "home": "ホームページ",
     "source": "GitHub"
+  },
+  "ProjectPage": {
+    "my-porfolio": "私のポートフォリオ",
+    "resume-creator": "履歴書作成者"
+  },
+  "common": {
+    "coming-soon": "近日公開予定 (React Native アプリになる予定)"
   }
 }

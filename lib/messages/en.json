@@ -10,5 +10,14 @@
   "NavBar": {
     "home": "Home Page",
     "source": "GitHub"
+  },
+  "ProjectPage": {
+    "description": "I love building side projects to solve my real life problems. Here are some of the projects I've built",
+    "my-porfolio": "My Porfolio",
+    "resume-creator": "Resume Creator",
+    "some-interesting-nside-projects": "Some interesting\nSide Projects"
+  },
+  "common": {
+    "coming-soon": "Coming Soon\n(Should be a React Native App)"
   }
 }

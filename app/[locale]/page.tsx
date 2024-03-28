@@ -21,10 +21,10 @@ export default function Page({
       </div>
 
       <div className="relative z-20 w-full">
-        <PageLayout className="bg-slate-600">
+        <PageLayout className="min-h-screen bg-slate-600" id="project">
           <ProjectPage />
         </PageLayout>
-        <PageLayout className="bg-red-100" id="about">
+        <PageLayout className="min-h-screen bg-red-100" id="about">
           <h2 className="text-3xl font-semibold">About</h2>
         </PageLayout>
       </div>
