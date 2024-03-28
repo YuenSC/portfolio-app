@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 import PageLayout from "@/components/PageLayout";
+import ProjectPage from "@/components/projects/ProjectPage";
 
 export default function Page({
   params: { locale },
@@ -21,7 +22,7 @@ export default function Page({
 
       <div className="relative z-20 w-full">
         <PageLayout className="bg-slate-600">
-          <h2 className="text-3xl font-semibold">Projects</h2>
+          <ProjectPage />
         </PageLayout>
         <PageLayout className="bg-red-100" id="about">
           <h2 className="text-3xl font-semibold">About</h2>

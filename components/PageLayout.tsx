@@ -11,12 +11,12 @@ const PageLayout = ({
   id?: string;
 }) => {
   return (
-    <div
+    <section
       className={cn("min-h-screen  pt-[var(--nav-bar-height)]", className)}
       id={id}
     >
       <div className={cn("container px-4")}>{children}</div>
-    </div>
+    </section>
   );
 };
 
