@@ -1,27 +1,20 @@
-import { HStack, Link, Text } from "@chakra-ui/react";
-import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import { memo } from "react";
+import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <HStack mb={4} align="center">
-      <Text>All rights reserved. © 2024 Calvin Yuen</Text>
+    <div className="container flex items-center gap-2 p-4">
+      <p>All rights reserved. © 2024 Calvin Yuen</p>
       <Link
-        isExternal
         href="https://www.linkedin.com/in/sing-chun-yuen-423a09185/"
-        mb={0}
-        width={"20px"}
-        height={"20px"}
+        target="_blank"
+        className="bg-white"
       >
-        <Image
-          width={20}
-          height={20}
-          src="/linkedinLogo.svg"
-          alt="LinkedIn link"
-        />
+        <FaLinkedin className="scale-125 text-[#0077b5]" size={24} />
       </Link>
-    </HStack>
+    </div>
   );
 };
 
-export default Footer;
+export default memo(Footer);

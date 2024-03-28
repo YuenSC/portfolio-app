@@ -1,0 +1,45 @@
+{
+  "AboutPage": {
+    "about": "私について",
+    "app-bar-description": "この 1 年間、私は主に<HighlightText>ReactとReact Native</HighlightText>の開発者として働いています。A.LIFE（IOS / Android）というアプリのUI/UXを構築するためです。このアプリはFTLifeとNWS Holdingsの<HighlightText>約500人</HighlightText>の従業員が利用している、健康とウェルネスを促進するスタッフエンゲージメントアプリです。さらに、このアプリのためのCMSシステムも<HighlightText>Next.js</HighlightText>で開発しています。",
+    "app-bar-title": "2次求人 - フロントエンドエンジニア@App Bar",
+    "aws-description": "前の仕事を辞めた後、私は AWS 認定ソリューションアーキテクト - アソシエイト試験の勉強に数か月間費やしました。\n私は最初の試行で試験に合格し、2024 年 1 月に認定資格を受け取りました。これは、<HighlightText>クラシック ロード バランサー</HighlightText>、<HighlightText>自動スケーリング</HighlightText>、<HighlightText>サーバーレス アーキテクチャ</HighlightText>などのクラウド コンピューティングの概念とサービスを理解するのに役立ちます。 ",
+    "aws-title": "認定資格 - AWS 認定ソリューションアーキテクト - アソシエイト",
+    "description": "<HighlightText>「React、React Native、TypeScript</HighlightText>を使用してウェブおよびモバイルアプリを構築する経験を持つ中級の<HighlightText>フロントエンド開発者</HighlightText>です。クロスファンクショナルなチームとの協力能力があり、技術的なコンセプトを効果的に伝えることができます。現在、<HighlightText>日本</HighlightText>での機会を求めて、貢献をさらに深め、成長したいと考えています。",
+    "school-description": "HKUSTで勉強するのは楽しい時間でした。\n面白い人やコースがたくさんあります。\n私は、基本的なエレクトロニクス、プログラミングから、高度な機械学習、コンピューター ビジョン、AI まで、多くのことを学びました。\n私の時間のほとんどは勉強に費やされましたが、新しい友達と出会い、ドイツ語を学ぶために HM Hochschule München University of Applied Sciences の交換プログラムにも参加しました。\nさらに、最終学年で <HighlightText>JLPT N3</HighlightText> を取得したことが、日本語への興味を呼び起こしました。",
+    "school-title": "学校 - 香港工科大学電子工学科 1 級優等賞 (工学学士)",
+    "talkbox-description": "私の初めての正式な仕事として、香港で最大かつ最近建設されたショッピングモールである<Link><HighlightText>Airside</HighlightText></Link>のために、才能管理システムを作成しました。Airsideは商業ワークプレイスとショッピングモールの混合利用を行う47階建ての建物です。私は<HighlightText>複雑なシステム</HighlightText>であるため、<HighlightText>React</HighlightText>のスキル（create-react-appで）を徹底的に練習しました。複雑なユーザー認証、ロール管理、ダッシュボード、リッチテキストエディターからさまざまな機能まで、さまざまな要素に取り組みました。",
+    "talkbox-title": "1 番目のジョブ - Web 開発者@Talkbox Limted"
+  },
+  "Home": {
+    "frontend-developer": "フロントエンドの開発者",
+    "name": "カルビン・ユエン"
+  },
+  "Metadata": {
+    "description": "Calvin Yuen は香港在住のフロントエンド開発者です。彼は美しく機能的なウェブサイトを作成することに情熱を注いでいます。",
+    "title": "Calvin Yuen - ポートフォリオ"
+  },
+  "NavBar": {
+    "aboutMe": "私について",
+    "home": "ホームページ",
+    "intro": "導入",
+    "project": "プロジェクト",
+    "source": "GitHub"
+  },
+  "NavBarContactDropdown": {
+    "contact-me": "連絡して",
+    "email": "Eメール",
+    "github": "ギットハブ",
+    "linkedin": "リンクトイン",
+    "resume": "再開する"
+  },
+  "ProjectPage": {
+    "description": "私は現実の問題を解決するためのサイドプロジェクトを構築するのが大好きです。\nこれが私が構築したプロジェクトの一部です",
+    "my-porfolio": "私のポートフォリオ",
+    "resume-creator": "履歴書作成者",
+    "some-interesting-nside-projects": "いくつか興味深い\nサイドプロジェクト"
+  },
+  "common": {
+    "coming-soon": "近日公開予定 (React Native アプリになる予定)"
+  }
+}
