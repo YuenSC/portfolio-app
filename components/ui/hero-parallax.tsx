@@ -66,7 +66,7 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className=""
+        className="will-change-transform"
       >
         <motion.div className="flex flex-row-reverse gap-4 space-x-reverse md:gap-20 ">
           {firstRow.map((product) => (
@@ -120,7 +120,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product relative aspect-video w-[60vw] min-w-[30rem] flex-shrink-0"
+      className="group/product relative aspect-video w-[60vw] min-w-[30rem] flex-shrink-0 will-change-transform"
     >
       {product.link && product.thumbnail ? (
         <Link
