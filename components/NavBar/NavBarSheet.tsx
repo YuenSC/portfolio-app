@@ -30,7 +30,7 @@ const NavBarSheet = ({ routes }: { routes: NavItem[] }) => {
   }
 
   return (
-    <Sheet open>
+    <Sheet>
       <SheetTrigger asChild className="cursor-pointer md:hidden">
         <Menu />
       </SheetTrigger>
