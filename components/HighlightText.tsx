@@ -11,15 +11,6 @@ const highlight = {
   },
 };
 
-const text = {
-  hidden: {
-    fontWeight: "400",
-  },
-  visible: {
-    fontWeight: "700",
-  },
-};
-
 const HighlightText = ({
   children,
   className,
@@ -32,11 +23,11 @@ const HighlightText = ({
       <motion.span
         style={{ originX: 0 }}
         variants={highlight}
-        className="absolute inset-x-0 bottom-0 top-1/2 z-0 bg-slate-600"
+        className="absolute inset-x-0 bottom-0 top-1/2 z-0 bg-slate-100 dark:bg-slate-600"
       />
-      <motion.span className="relative z-20 whitespace-nowrap" variants={text}>
+      <span className="relative z-20 whitespace-nowrap font-bold">
         {children}
-      </motion.span>
+      </span>
     </span>
   );
 };

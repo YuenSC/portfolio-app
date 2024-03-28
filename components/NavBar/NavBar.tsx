@@ -18,6 +18,7 @@ import NavBarTitle from "./NavBarTitle";
 import DarkModeToggle from "../DarkModeToggle";
 import NavBarNavList from "./NavBarNavList";
 import LanguageToggle from "../LanguageToggle";
+import { usePathname } from "next/navigation";
 
 export type NavItem = {
   isExternal: boolean;
@@ -31,8 +32,18 @@ const NavBar = ({ locale }: { locale: string }) => {
   const routes = useMemo(() => {
     return [
       {
-        href: `/${locale}`,
-        label: t("NavBar.home"),
+        href: `#`,
+        label: t("NavBar.intro"),
+        isExternal: false,
+      },
+      {
+        href: `#project`,
+        label: t("NavBar.project"),
+        isExternal: false,
+      },
+      {
+        href: `#about`,
+        label: t("NavBar.aboutMe"),
         isExternal: false,
       },
       {
@@ -41,7 +52,7 @@ const NavBar = ({ locale }: { locale: string }) => {
         label: t("NavBar.source"),
       },
     ] satisfies NavItem[];
-  }, [locale, t]);
+  }, [t]);
 
   return (
     <div className="sticky top-0 z-40">
@@ -76,6 +87,7 @@ const NavBar = ({ locale }: { locale: string }) => {
                         href={route.href}
                         target={route.isExternal ? "_blank" : "_self"}
                         className="block text-lg text-gray-800 dark:text-white"
+                        scroll={false}
                       >
                         {route.label}
                       </Link>

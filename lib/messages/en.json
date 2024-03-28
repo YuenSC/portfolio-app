@@ -1,7 +1,15 @@
 {
   "AboutPage": {
     "about": "About Me",
-    "description": "Mid-level <HighlightText>Frontend</HighlightText> Developer with experience in building web and mobile app using <HighlightText>React, React Native, and TypeScript</HighlightText>. A team player with a strong ability to collaborate with cross-functional teams and effectively communicate technical concepts. Currently seeking opportunities in <HighlightText>Japan</HighlightText> to further contribute and grow"
+    "app-bar-description": "During this year, I mainly works as <HighlightText>React and React Native</HighlightText> Developer to build the UI/UX of the app - A.LIFE (IOS / Android). It is a staff engagement app that promote Health & Wellness that is using by the <HighlightText>~500 employees</HighlightText> in FTLife and NWS holdings. Besides, I also work on the CMS system for the app by <HighlightText>Next.js</HighlightText>",
+    "app-bar-title": "2nd Jobs - Frontend Engineer@App Bar",
+    "aws-description": "After quitting from my last job, I spent a few months studying for the AWS Certified Solutions Architect - Associate exam. I passed the exam on my first attempt and received my certification in January 2024. It helps me to understand the cloud computing concepts and services like the <HighlightText> classic load balancer</HighlightText>, <HighlightText>auto-scaling</HighlightText>, and the <HighlightText>serverless architecture.</HighlightText>",
+    "aws-title": "Certification - AWS Certified Solutions Architect - Associate",
+    "description": "Mid-level <HighlightText>Frontend</HighlightText> Developer with experience in building web and mobile app using <HighlightText>React, React Native, and TypeScript</HighlightText>. A team player with a strong ability to collaborate with cross-functional teams and effectively communicate technical concepts. Currently seeking opportunities in <HighlightText>Japan</HighlightText> to further contribute and grow",
+    "school-description": "It was a fun time to study at HKUST. There is a lot of interesting people and courses. I have learned a lot of things from the basic electronics, programming, to the advanced machine learning, computer vision, and the AI. Study occupied most of my time, but I also joined an exchange program in HM Hochschule München University of Applied Sciences to meet new friends and learn the German. What's more, I got my <HighlightText>JLPT N3</HighlightText> in my final year which spark my interest in the Japanese language.",
+    "school-title": "School - 1st class honor at Electronics Engineering in HKUST (Bachelor of Engineering)",
+    "talkbox-description": "As my first full time job, I created my first launched project - Talent Management System for one of the biggest and recently built shopping mall <Link><HighlightText>Airside</HighlightText></Link> in Hong Kong. It is 47-story building with a mixed use of commercial workplace and shopping mall. I have practiced my <HighlightText>React</HighlightText> skills (in create-react-app) thoroughly on such a <HighlightText>complicated system</HighlightText> from the complex user authentication, role management, dashboard, rich text editor, to the various kinds of features.",
+    "talkbox-title": "1st Jobs - Web Developer@Talkbox Limted"
   },
   "Home": {
     "frontend-developer": "Frontend Developer",
@@ -12,7 +20,10 @@
     "title": "Calvin Yuen - Portfolio"
   },
   "NavBar": {
+    "aboutMe": "About Me",
     "home": "Home Page",
+    "intro": "Introduction",
+    "project": "Project",
     "source": "GitHub"
   },
   "ProjectPage": {

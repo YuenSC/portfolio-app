@@ -1,7 +1,11 @@
 "use client";
 import { Variants, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
+import { ReactNode } from "react";
 import HighlightText from "../HighlightText";
+import { StickyScroll } from "../ui/sticky-scroll-reveal";
 
 const container: Variants = {
   hidden: {
@@ -21,6 +25,156 @@ const container: Variants = {
 const AboutPage = () => {
   const t = useTranslations();
 
+  const content = [
+    {
+      title: "2024 JAN",
+      subtitle: (
+        <Link
+          href="https://www.credly.com/badges/014f01d5-6241-4af3-9a65-df4163e9e342/linked_in?t=s82nvd"
+          target="_blank"
+          className="underline"
+        >
+          {t("AboutPage.aws-title")}
+        </Link>
+      ),
+      description: (
+        <span>
+          {t.rich("AboutPage.aws-description", {
+            HighlightText: (children) => (
+              <HighlightText>{children}</HighlightText>
+            ),
+          })}
+        </span>
+      ),
+      content: (
+        <Link
+          href="https://www.credly.com/badges/014f01d5-6241-4af3-9a65-df4163e9e342/linked_in?t=s82nvd"
+          target="_blank"
+          className="underline"
+        >
+          <Image
+            fill
+            src="aws-ssa-tag.png"
+            alt="Tag of AWS Certified Solutions Architect - Associate"
+            className="object-contain"
+          />
+        </Link>
+      ),
+    },
+    {
+      title: "2022 OCT - 2024 JAN",
+      subtitle: (
+        <Link
+          href="https://www.app-bar.com/"
+          target="_blank"
+          className="underline"
+        >
+          {t("AboutPage.app-bar-title")}
+        </Link>
+      ),
+      description: (
+        <span>
+          {t.rich("AboutPage.app-bar-description", {
+            HighlightText: (children) => (
+              <HighlightText>{children}</HighlightText>
+            ),
+          })}
+        </span>
+      ),
+      content: (
+        <Link
+          href="https://www.app-bar.com/"
+          target="_blank"
+          className="underline"
+        >
+          <Image
+            fill
+            src="app-bar.svg"
+            alt="Tag of AWS Certified Solutions Architect - Associate"
+            className="bg-white object-contain"
+          />
+        </Link>
+      ),
+    },
+    {
+      title: "2021 AUG - 2022 AUG",
+      subtitle: (
+        <Link href="https://talkbox.app/" target="_blank" className="underline">
+          {t("AboutPage.talkbox-title")}
+        </Link>
+      ),
+      description: (
+        <span>
+          {t.rich("AboutPage.talkbox-description", {
+            HighlightText: (children) => (
+              <HighlightText className="group-[.has-underline]:underline">
+                {children}
+              </HighlightText>
+            ),
+            Link: (children) => {
+              return (
+                <Link
+                  href="https://www.airside.com.hk/en"
+                  target="_blank"
+                  className="has-underline group"
+                >
+                  {children}
+                </Link>
+              );
+            },
+          })}
+        </span>
+      ),
+      content: (
+        <Link href="https://talkbox.app/" target="_blank" className="underline">
+          <Image
+            fill
+            src="talkbox.png"
+            alt="Talkbox Logo"
+            className="object-contain"
+          />
+        </Link>
+      ),
+    },
+    {
+      title: "2017 SEP - 2021 SEP",
+      subtitle: (
+        <Link
+          href="https://hkust.edu.hk/"
+          target="_blank"
+          className="underline"
+        >
+          {t("AboutPage.school-title")}
+        </Link>
+      ),
+      description: (
+        <span>
+          {t.rich("AboutPage.school-description", {
+            HighlightText: (children) => (
+              <HighlightText className="group-[.has-underline]:underline">
+                {children}
+              </HighlightText>
+            ),
+          })}
+        </span>
+      ),
+      content: (
+        <Link
+          href="https://hkust.edu.hk/"
+          target="_blank"
+          className="underline"
+        >
+          <Image
+            fill
+            src="ust-logo.svg"
+            alt="My University (HKUST) Logo"
+            className="bg-white object-contain "
+          />
+        </Link>
+      ),
+    },
+  ];
+
   return (
     <motion.div
       variants={container}
@@ -39,80 +193,14 @@ const AboutPage = () => {
           ),
         })}
       </p>
+
+      <div className="mt-8 flex flex-col gap-4">
+        <StickyScroll content={content} />
+      </div>
+
+      <div className="min-h-screen bg-background"></div>
     </motion.div>
   );
 };
 
 export default AboutPage;
-
-const contents = [
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse
-          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
-          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
-          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
-          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
-        </p>
-        <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
-          veniam in commodo id reprehenderit adipisicing. Proident duis
-          exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
-        </p>
-        <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
-          reprehenderit deserunt amet laborum consequat adipisicing officia qui
-          irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
-          Amet culpa officia aliquip deserunt veniam deserunt officia
-          adipisicing aliquip proident officia sunt.
-        </p>
-      </>
-    ),
-    badge: "2024 JAN",
-  },
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-        <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
-          veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
-          cillum ut mollit.
-        </p>
-      </>
-    ),
-    badge: "Changelog",
-  },
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-      </>
-    ),
-    badge: "Launch Week",
-  },
-];

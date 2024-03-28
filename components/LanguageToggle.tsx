@@ -36,7 +36,9 @@ const LanguageToggle = () => {
             asChild
             className="text-black dark:text-white"
           >
-            <Link href={`/${locale}`}>{label}</Link>
+            <Link href={`/${locale}`} scroll={false}>
+              {label}
+            </Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

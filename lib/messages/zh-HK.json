@@ -1,7 +1,15 @@
 {
   "AboutPage": {
     "about": "關於我",
-    "description": "中級 <HighlightText>Frontend</HighlightText> 開發人員，擁有使用 <HighlightText>React、React Native 和 TypeScript</HighlightText> 建立 Web 和行動應用程式的經驗。具有強大的團隊合作精神，能夠與跨職能團隊合作並有效溝通技術概念。\n目前正在<HighlightText>日本</HighlightText>尋求進一步貢獻和成長的機會"
+    "app-bar-description": "在這一年裡，我主要作為 <HighlightText>React 和 React Native</HighlightText> 開發人員來建立應用程式 - A.LIFE（IOS / Android）的 UI/UX。\n這是一款促進健康的員工參與應用程式",
+    "app-bar-title": "第二份工作 - 前端工程師@App Bar",
+    "aws-description": "辭掉上一份工作後，我花了幾個月的時間學習 AWS 認證解決方案架構師 - 助理考試。\n我第一次嘗試就通過了考試，並於 2024 年 1 月獲得了認證。它幫助我了解了雲端運算概念和服務，例如 <HighlightText> 經典負載平衡器、自動伸縮和無伺服器架構。 \n</HighlightText>",
+    "aws-title": "認證 - AWS 認證解決方案架構師 - 助理",
+    "description": "中級 <HighlightText>Frontend</HighlightText> 開發人員，擁有使用 <HighlightText>React、React Native 和 TypeScript</HighlightText> 建立 Web 和行動應用程式的經驗。具有強大的團隊合作精神，能夠與跨職能團隊合作並有效溝通技術概念。\n目前正在<HighlightText>日本</HighlightText>尋求進一步貢獻和成長的機會",
+    "school-description": "在香港科技大學學習是一段有趣的時光。\n有很多有趣的人和課程。\n我學到了很多東西，從基礎的電子學、編程，到高級的機器學習、電腦視覺和人工智慧。\n學習佔據了我的大部分時間，但我也參加了<HighlightText>慕尼黑應用科技大學</HighlightText>的交換計畫結識新朋友並學習德語。\n更重要的是，我在最後一年獲得了<HighlightText>JLPT N3</HighlightText>，激發了我對日語的興趣。",
+    "school-title": "學校 - 香港科技大學電子工程一等榮譽（工程學士）",
+    "talkbox-description": "作為我的第一份全職工作，我為香港最近建成的最大的購物中心 <Link><HighlightText>Airside</HighlightText> </Link> 創建了我的第一個啟動項目 - 人才管理系統。\n這是一棟47層樓的建築，集商業辦公室和購物中心為一體。\n在這樣一個<HighlightText>複雜的系統</HighlightText>上，從複雜的使用者認證、角色管理、儀表板、富文本編輯器，到各種特徵。",
+    "talkbox-title": "第一份工作 - 網路開發人員@Talkbox Limted"
   },
   "Home": {
     "frontend-developer": "前端開發者",
