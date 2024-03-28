@@ -6,6 +6,7 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -17,6 +18,7 @@ import { useMediaQuery } from "usehooks-ts";
 import RippleEffect from "../RippleEffect";
 import { NavItem } from "./NavBar";
 import NavBarTitle from "./NavBarTitle";
+import Footer from "../Footer";
 
 const NavBarSheet = ({ routes }: { routes: NavItem[] }) => {
   const hash = useHash();
@@ -28,11 +30,11 @@ const NavBarSheet = ({ routes }: { routes: NavItem[] }) => {
   }
 
   return (
-    <Sheet>
+    <Sheet open>
       <SheetTrigger asChild className="cursor-pointer md:hidden">
         <Menu />
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="flex h-full flex-col">
         <SheetHeader className="flex flex-row items-center justify-between space-y-0">
           <SheetTitle>
             <NavBarTitle />
@@ -59,6 +61,9 @@ const NavBarSheet = ({ routes }: { routes: NavItem[] }) => {
               </RippleEffect>
             );
           })}
+        </div>
+        <div className="-mb-4 -ml-4 flex flex-1 items-end">
+          <Footer />
         </div>
       </SheetContent>
     </Sheet>
