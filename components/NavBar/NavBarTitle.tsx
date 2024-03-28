@@ -1,11 +1,12 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { memo } from "react";
 
-const NavBarTitle = () => {
+const NavBarTitle = ({ nameClassName }: { nameClassName?: string }) => {
   const t = useTranslations();
 
   return (
@@ -27,7 +28,9 @@ const NavBarTitle = () => {
         height={32}
         className="hidden dark:block"
       />
-      <p className="text-xl font-semibold">{t("Home.name")}</p>
+      <p className={cn("text-xl font-semibold", nameClassName)}>
+        {t("Home.name")}
+      </p>
     </motion.div>
   );
 };

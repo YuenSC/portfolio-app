@@ -26,6 +26,13 @@
     "project": "專案",
     "source": "GitHub"
   },
+  "NavBarContactDropdown": {
+    "contact-me": "聯絡",
+    "email": "電子郵件",
+    "github": "吉圖布",
+    "linkedin": "領英",
+    "resume": "恢復"
+  },
   "ProjectPage": {
     "description": "我喜歡建立副項目來解決我的現實生活問題。\n這是我建造的一些項目",
     "my-porfolio": "我的作品集",

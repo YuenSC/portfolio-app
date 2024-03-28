@@ -26,6 +26,13 @@
     "project": "Projects",
     "source": "GitHub"
   },
+  "NavBarContactDropdown": {
+    "contact-me": "Contact Me",
+    "email": "Email",
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "resume": "Resume"
+  },
   "ProjectPage": {
     "description": "I love building side projects to solve my real life problems. Here are some of the projects I've built",
     "my-porfolio": "My Porfolio",

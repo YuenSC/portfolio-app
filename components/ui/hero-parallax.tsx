@@ -125,7 +125,8 @@ export const ProductCard = ({
       {product.link && product.thumbnail ? (
         <Link
           href={product.link}
-          className="block group-hover/product:shadow-2xl "
+          className="block group-hover/product:shadow-2xl"
+          target="_blank"
         >
           <div className="absolute h-full w-full">
             <Image

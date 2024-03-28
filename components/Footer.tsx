@@ -9,8 +9,9 @@ const Footer = () => {
       <Link
         href="https://www.linkedin.com/in/sing-chun-yuen-423a09185/"
         target="_blank"
+        className="bg-white"
       >
-        <FaLinkedin className="text-[#0077b5]" size={24} />
+        <FaLinkedin className="scale-125 text-[#0077b5]" size={24} />
       </Link>
     </div>
   );

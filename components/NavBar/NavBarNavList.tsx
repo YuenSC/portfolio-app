@@ -9,10 +9,8 @@ import { NavItem } from "./NavBar";
 const NavBarNavList = ({ routes }: { routes: NavItem[] }) => {
   const hash = useHash();
 
-  console.log("hash", hash);
-
   return (
-    <nav className="mr-8 hidden gap-4 md:flex">
+    <nav className="mr-8 hidden gap-4 lg:flex">
       {routes.map((route, index) => {
         const hashInRoute = route.isExternal
           ? undefined

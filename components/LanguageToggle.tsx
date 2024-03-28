@@ -29,12 +29,12 @@ const LanguageToggle = () => {
           <span className="sr-only">Select Languages</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent align="end">
         {localesWithLabel.map(({ locale, label }) => (
           <DropdownMenuItem
             key={locale}
             asChild
-            className="text-black dark:text-white"
+            className="cursor-pointer text-black dark:text-white"
           >
             <Link href={`/${locale}`} scroll={false}>
               {label}

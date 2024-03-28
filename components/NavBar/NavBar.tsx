@@ -1,16 +1,12 @@
-import { MyPortfolioUrl } from "@/lib/constants";
-import { Menu, PanelTopCloseIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { memo, useMemo } from "react";
-import RippleEffect from "../RippleEffect";
-import { Button } from "../ui/button";
-import NavBarTitle from "./NavBarTitle";
 import DarkModeToggle from "../DarkModeToggle";
-import NavBarNavList from "./NavBarNavList";
 import LanguageToggle from "../LanguageToggle";
-import { usePathname } from "next/navigation";
-import NavBarDrawer from "./NavBarDrawer";
+import NavBarContactDropdown from "./NavBarContactDropdown";
+import NavBarNavList from "./NavBarNavList";
+import NavBarSheet from "./NavBarSheet";
+import NavBarTitle from "./NavBarTitle";
 
 export type NavItem = {
   isExternal: boolean;
@@ -38,11 +34,11 @@ const NavBar = ({ locale }: { locale: string }) => {
         label: t("NavBar.aboutMe"),
         isExternal: false,
       },
-      {
-        href: MyPortfolioUrl,
-        isExternal: true,
-        label: t("NavBar.source"),
-      },
+      // {
+      //   href: MyPortfolioUrl,
+      //   isExternal: true,
+      //   label: t("NavBar.source"),
+      // },
     ] satisfies NavItem[];
   }, [t]);
 
@@ -52,14 +48,15 @@ const NavBar = ({ locale }: { locale: string }) => {
 
       <div className="container flex h-[var(--nav-bar-height)] items-center justify-between px-4">
         <Link href={`/${locale}`}>
-          <NavBarTitle />
+          <NavBarTitle nameClassName="hidden md:block" />
         </Link>
 
         <div className="flex items-center gap-3">
           <NavBarNavList routes={routes} />
+          <NavBarContactDropdown />
           <DarkModeToggle />
           <LanguageToggle />
-          <NavBarDrawer routes={routes} />
+          <NavBarSheet routes={routes} />
         </div>
       </div>
     </div>
