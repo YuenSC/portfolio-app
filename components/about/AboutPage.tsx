@@ -1,22 +1,37 @@
 "use client";
-import Image from "next/image";
-import { TracingBeam } from "../ui/tracing-beam";
+import { Variants, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import HighlightText from "../HighlightText";
-import { motion } from "framer-motion";
+
+const container: Variants = {
+  hidden: {
+    y: 30,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.3,
+    },
+  },
+};
 
 const AboutPage = () => {
   const t = useTranslations();
 
   return (
     <motion.div
-      initial={{ y: 30, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1, transition: { delay: 0.3 } }}
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
       className="container mx-auto min-h-screen px-4 py-12"
     >
       <h1 className="whitespace-pre-line text-2xl font-bold md:text-7xl dark:text-white">
         {t("AboutPage.about")}
       </h1>
+
       <p className="mt-8 max-w-4xl whitespace-pre-line text-base md:text-xl dark:text-neutral-200">
         {t.rich("AboutPage.description", {
           HighlightText: (children) => (
