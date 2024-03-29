@@ -59,6 +59,8 @@ export const StickyScroll = ({
       },
       0,
     );
+
+    if (closestBreakpointIndex === activeCard) return;
     setActiveCard(closestBreakpointIndex);
   });
 
