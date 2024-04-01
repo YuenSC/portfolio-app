@@ -55,9 +55,7 @@ export default function RootLayout({
         >
           <main>
             <NextIntlClientProvider locale={locale} messages={messages}>
-              <NavBar locale={locale} />
               {children}
-              <Footer />
             </NextIntlClientProvider>
             <GoogleAnalytics gaId="G-8WL0B2M97P" />
           </main>
