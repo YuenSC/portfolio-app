@@ -1,3 +1,4 @@
+import RevolutHero from "@/components/revolut/RevolutHero";
 import { SiteNameSlugEnum } from "@/lib/types/SiteNameSlugEnum";
 
 export function generateStaticParams() {
@@ -5,14 +6,13 @@ export function generateStaticParams() {
     slug: siteNameSlug,
   }));
 
-  console.log("params", params);
   return params;
 }
 
 export default function Page({
-  params: { locale },
+  params: { locale, slug },
 }: {
-  params: { locale: string };
+  params: { locale: string; slug: SiteNameSlugEnum };
 }) {
-  return <div>Page</div>;
+  return <RevolutHero />;
 }
