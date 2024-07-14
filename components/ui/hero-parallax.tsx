@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { FaGithub, FaLink } from "react-icons/fa";
 
 export const HeroParallax = ({
   products,
@@ -19,6 +20,7 @@ export const HeroParallax = ({
     title: string;
     link: string;
     thumbnail: string;
+    github: string;
   }[];
 }) => {
   const firstRow = products.slice(0, 3);
@@ -31,7 +33,7 @@ export const HeroParallax = ({
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.3, 0.4], [-50, -50, 900], {
+    useTransform(scrollYProgress, [0, 0.3, 0.4], [-50, -50, 800], {
       clamp: false,
     }),
     springConfig,
@@ -108,6 +110,7 @@ export const ProductCard = ({
     title: string;
     link?: string;
     thumbnail?: string;
+    github: string;
   };
   translate: MotionValue<number>;
 }) => {
@@ -120,14 +123,10 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product relative aspect-video w-[60vw] min-w-[30rem] flex-shrink-0"
+      className="group/product relative aspect-video w-[50vw] min-w-[30rem] flex-shrink-0"
     >
-      {product.link && product.thumbnail ? (
-        <Link
-          href={product.link}
-          className="block group-hover/product:shadow-2xl"
-          target="_blank"
-        >
+      {product.thumbnail ? (
+        <div className="block group-hover/product:shadow-2xl">
           <div className="absolute h-full w-full">
             <Image
               src={product.thumbnail}
@@ -136,7 +135,7 @@ export const ProductCard = ({
               alt={product.title}
             />
           </div>
-        </Link>
+        </div>
       ) : (
         <div className="flex h-full items-center justify-center border-4 border-background-reversed bg-black bg-opacity-50">
           <h3 className="whitespace-pre-line text-center text-3xl font-bold">
@@ -145,9 +144,30 @@ export const ProductCard = ({
         </div>
       )}
       <div className="pointer-events-none absolute inset-0 h-full w-full bg-black opacity-0 group-hover/product:opacity-80"></div>
-      <h2 className="absolute bottom-4 left-4 text-white opacity-0 group-hover/product:opacity-100">
-        {product.title}
-      </h2>
+
+      <div className="absolute bottom-4 left-4 flex flex-col gap-1 text-white opacity-0 group-hover/product:opacity-100">
+        <h2 className="text-xl">{product.title}</h2>
+        {product.link && (
+          <a
+            href={product.link}
+            target="_blank"
+            className="flex items-center gap-2 hover:underline"
+          >
+            <FaLink />
+            <h2>{product.link}</h2>
+          </a>
+        )}
+        {product.github && (
+          <a
+            href={product.github}
+            target="_blank"
+            className="flex items-center gap-2 hover:underline"
+          >
+            <FaGithub />
+            <h2>{product.github}</h2>
+          </a>
+        )}
+      </div>
     </motion.div>
   );
 };
