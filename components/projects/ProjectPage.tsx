@@ -20,7 +20,7 @@ const ProjectPage = () => {
         thumbnail: "resume-creator.png",
       },
       {
-        title: t("common.coming-soon"),
+        title: "Group Expense (Coming Soon)",
         link: "",
         github: "https://github.com/YuenSC/expo-router-app",
         thumbnail: "group-expense.png",
