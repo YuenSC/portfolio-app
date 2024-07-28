@@ -15,14 +15,14 @@ const NavBarTitle = ({ nameClassName }: { nameClassName?: string }) => {
       className="flex items-center gap-1"
     >
       <Image
-        src="icon/favicon-32x32.png"
+        src="/icon/favicon-32x32.png"
         alt="favicon"
         width={32}
         height={32}
         className="dark:hidden"
       />
       <Image
-        src="icon-dark/favicon-32x32.png"
+        src="/icon-dark/favicon-32x32.png"
         alt="favicon"
         width={32}
         height={32}
