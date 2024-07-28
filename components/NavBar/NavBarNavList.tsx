@@ -2,9 +2,9 @@
 
 import useHash from "@/lib/hooks/useHash";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { memo } from "react";
 import { NavItem } from "./NavBar";
+import { Link } from "@/lib/i18n";
 
 const NavBarNavList = ({ routes }: { routes: NavItem[] }) => {
   const hash = useHash();

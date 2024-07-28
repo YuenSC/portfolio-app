@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/lib/i18n";
 import { memo } from "react";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -12,6 +12,9 @@ const Footer = () => {
         className="bg-white"
       >
         <FaLinkedin className="scale-125 text-[#0077b5]" size={24} />
+      </Link>
+      <Link href="/privacy-policy" className="ml-auto">
+        <p>Privacy Policy</p>
       </Link>
     </div>
   );

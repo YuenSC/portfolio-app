@@ -20,17 +20,17 @@ const NavBar = ({ locale }: { locale: string }) => {
   const routes = useMemo(() => {
     return [
       {
-        href: `#`,
+        href: `/#`,
         label: t("NavBar.intro"),
         isExternal: false,
       },
       {
-        href: `#project`,
+        href: `/#project`,
         label: t("NavBar.project"),
         isExternal: false,
       },
       {
-        href: `#about`,
+        href: `/#about`,
         label: t("NavBar.aboutMe"),
         isExternal: false,
       },
