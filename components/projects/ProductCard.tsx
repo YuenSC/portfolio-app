@@ -42,7 +42,8 @@ const ProductCard = ({
       )}
       <div className="pointer-events-none absolute inset-0 h-full w-full bg-black opacity-0 group-hover/product:opacity-80"></div>
 
-      <div className="absolute bottom-4 left-4 flex flex-col gap-1 text-white opacity-0 group-hover/product:opacity-100">
+      {/* md link  */}
+      <div className="absolute bottom-4 left-4 hidden w-full flex-col gap-1 overflow-hidden text-white opacity-0 group-hover/product:opacity-100 md:flex">
         <h2 className="text-xl">{product.title}</h2>
         {product.link && (
           <a
@@ -62,6 +63,28 @@ const ProductCard = ({
           >
             <FaGithub />
             <h2>{product.github}</h2>
+          </a>
+        )}
+      </div>
+
+      {/* small screen icon link */}
+      <div className="absolute flex h-full w-full items-center justify-center gap-8 opacity-0 group-hover/product:opacity-100 md:hidden">
+        {product.link && (
+          <a
+            href={product.link}
+            target="_blank"
+            className="text-white hover:text-primary"
+          >
+            <FaLink size={50} />
+          </a>
+        )}
+        {product.github && (
+          <a
+            href={product.github}
+            target="_blank"
+            className="text-white hover:text-primary"
+          >
+            <FaGithub size={50} />
           </a>
         )}
       </div>
