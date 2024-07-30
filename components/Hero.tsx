@@ -98,7 +98,6 @@ const Hero = () => {
           <ArrowDownFromLineIcon />
         </motion.div>
       </motion.div>
-      <BackgroundBeams className="hidden dark:block" />
     </motion.div>
   );
 };
