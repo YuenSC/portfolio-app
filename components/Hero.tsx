@@ -5,7 +5,7 @@ import { ArrowDownFromLineIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { memo } from "react";
-import { BackgroundBeams } from "./ui/background-beams";
+import JumpText from "./JumpText";
 
 const listVariants: Variants = {
   hidden: {
@@ -70,9 +70,10 @@ const Hero = () => {
               </p>
             ))}
           </div>
-          <div className="text-center italic text-black lg:text-xl dark:text-white">
-            {t("Home.frontend-developer")}
-          </div>
+          <JumpText
+            text={t("Home.frontend-developer")}
+            className="mt-4 text-center italic text-black lg:text-xl dark:text-white"
+          />
         </div>
       </motion.div>
 
