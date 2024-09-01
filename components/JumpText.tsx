@@ -23,6 +23,10 @@ const JumpText = ({
 
   const jumpTextArr = text.split("");
 
+  useEffect(() => {
+    controls.start("show");
+  }, [controls]);
+
   return (
     <motion.div
       className={cn(className, "text-red-500")}
