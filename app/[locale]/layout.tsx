@@ -1,3 +1,4 @@
+import { use } from "react";
 import { locales } from "@/lib/i18n";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
@@ -13,11 +14,17 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ locale: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale });
 
   return {
@@ -33,13 +40,22 @@ export async function generateMetadata({
   } as Metadata;
 }
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-}>) {
+export default function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: { locale: string };
+  }>
+) {
+  const params = use(props.params);
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   unstable_setRequestLocale(locale);
 
   const messages = useMessages();

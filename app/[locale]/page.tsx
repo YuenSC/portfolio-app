@@ -1,3 +1,4 @@
+import { use } from "react";
 import Hero from "@/components/Hero";
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
@@ -7,11 +8,17 @@ import AboutPage from "@/components/about/AboutPage";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer";
 
-export default function Page({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+export default function Page(
+  props: {
+    params: Promise<{ locale: string }>;
+  }
+) {
+  const params = use(props.params);
+
+  const {
+    locale
+  } = params;
+
   unstable_setRequestLocale(locale);
 
   const t = useTranslations();

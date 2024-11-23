@@ -31,17 +31,17 @@ const RevolutHero = () => {
   const [isAnimationTriggered, setIsAnimationTriggered] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("latest", latest);
-
     if (latest === 0) {
       setIsAnimationTriggered(false);
       animate(
         "#white-container",
         {
           width: "300px",
-          height: "500px",
-          borderRadius: "12px",
+          height: "70vh",
           borderWidth: "2px",
+          borderTopLeftRadius: "12px",
+          borderTopRightRadius: "12px",
+          borderBottomWidth: "0px",
         },
         springConfig,
       );
@@ -62,7 +62,12 @@ const RevolutHero = () => {
 
     const playbackControls = animate(
       "#white-container",
-      { width: "100%", height: "100%", borderRadius: 0, borderWidth: "0px" },
+      {
+        width: "100%",
+        height: "100%",
+        borderRadius: 0,
+        borderWidth: "0px",
+      },
       springConfig,
     );
     playbackControls.then(() => {
@@ -88,14 +93,14 @@ const RevolutHero = () => {
         <div
           id="white-container"
           className={cn(
-            "absolute bottom-0 left-1/2 h-[500px] w-[300px] -translate-x-1/2 overflow-hidden rounded-lg bg-white",
+            "absolute bottom-0 left-1/2 h-[70vh] w-[300px] -translate-x-1/2 overflow-hidden rounded-b-none rounded-t-lg border-b-0 bg-white",
             "border-2 border-gray-400",
             "flex items-center justify-center",
           )}
         >
-          <div className="h-[500px] w-[300px] flex-none bg-red-50"></div>
-          <div className="h-[500px] w-[300px] flex-none bg-green-50"></div>
-          <div className="h-[500px] w-[300px] flex-none bg-blue-50"></div>
+          <div className="h-[70vh] w-[300px] flex-none bg-red-50"></div>
+          <div className="h-[70vh] w-[300px] flex-none bg-green-50"></div>
+          <div className="h-[70vh] w-[300px] flex-none bg-blue-50"></div>
         </div>
       </div>
 

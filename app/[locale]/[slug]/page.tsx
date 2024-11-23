@@ -9,10 +9,17 @@ export function generateStaticParams() {
   return params;
 }
 
-export default function Page({
-  params: { locale, slug },
-}: {
-  params: { locale: string; slug: SiteNameSlugEnum };
-}) {
+export default async function Page(
+  props: {
+    params: Promise<{ locale: string; slug: SiteNameSlugEnum }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   return <RevolutHero />;
 }
