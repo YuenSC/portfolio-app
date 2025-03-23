@@ -12,19 +12,19 @@ const ProjectPage = () => {
         title: "Group Expense (Coming Soon)",
         link: "https://testflight.apple.com/join/A4CSYSgc",
         github: "https://github.com/YuenSC/expo-router-app",
-        thumbnail: "group-expense.png",
+        thumbnail: "/group-expense.png",
       },
       {
         title: t("ProjectPage.resume-creator"),
         link: "https://resume-creator-calvin-yuen.vercel.app/en",
         github: "https://github.com/YuenSC/resume-maker",
-        thumbnail: "resume-creator.png",
+        thumbnail: "/resume-creator.png",
       },
       {
         title: t("ProjectPage.my-porfolio"),
         link: "https://portfolio-calvin-yuen.vercel.app",
         github: "https://github.com/YuenSC/portfolio-app",
-        thumbnail: "my-portfolio.png",
+        thumbnail: "/my-portfolio.png",
       },
     ];
   }, [t]);

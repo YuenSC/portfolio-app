@@ -56,7 +56,7 @@ const Hero = () => {
           animate="visible"
           className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full border-4 border-black xl:max-w-[350px] dark:border-white"
         >
-          <Image src="self-photo.jpg" alt="Calvin Yuen's image" fill />
+          <Image src="/self-photo.jpg" alt="Calvin Yuen's image" fill />
         </motion.div>
 
         <div className="-mt-12 w-full overflow-hidden lg:-mt-24">

@@ -54,7 +54,7 @@ const AboutPage = () => {
         >
           <Image
             fill
-            src="aws-ssa-tag.png"
+            src="/aws-ssa-tag.png"
             alt="Tag of AWS Certified Solutions Architect - Associate"
             className="object-contain"
           />

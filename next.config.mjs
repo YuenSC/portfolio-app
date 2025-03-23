@@ -7,9 +7,6 @@ const withNextIntl = createNextIntlPlugin("./lib/i18n.ts");
 const nextConfig = {
   reactStrictMode: false,
   // assetPrefix: "https://campaign.mcdonalds.com.hk/en/promotions/ShakeAndDip/",
-  images: {
-    unoptimized: true,
-  },
 
   // images: {
   //   loader: "custom",
