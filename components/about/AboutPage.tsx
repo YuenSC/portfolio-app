@@ -3,7 +3,7 @@ import { Variants, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import HighlightText from "../HighlightText";
 import { StickyScroll } from "../ui/sticky-scroll-reveal";
 
@@ -174,6 +174,16 @@ const AboutPage = () => {
       ),
     },
   ];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/test");
+      const data = await response.json();
+      console.log(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <motion.div
